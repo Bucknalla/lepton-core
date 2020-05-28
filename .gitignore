@@ -5,3 +5,4 @@ site
 *.vcd
 __pycache__
 .pytest_cache
+*.lxt

@@ -1,0 +1,10 @@
+mkdocs==1.1
+mkdocs-wavedrom-plugin==0.1.1
+mkdocs-bibtex==0.2.3
+mkdocs-material
+mkdocs-img2fig-plugin
+pylint
+Jinja2>=2.8, !=2.11.0, !=2.11.1
+symbolator
+myhdl
+pytest

@@ -1,0 +1,46 @@
+site_name: FLIR Lepton Core
+nav:
+    - Home: index.md
+    - Hardware: hardware.md
+    - Software: 
+        - Fusesoc: software/fusesoc.md
+        - Bare Metal: software/bare-metal.md
+        - Linux: software/linux.md
+    - Example: example.md
+    - References: references.md
+
+repo_name: bucknalla/lepton-core
+repo_url: https://github.com/bucknalla/lepton-core
+    
+theme:
+    name: material
+    palette:
+        primary: 'green'
+        accent: 'light green'
+    icon: 
+        logo: fontawesome/solid/camera-retro
+        repo: fontawesome/brands/github
+    favicon: assets/images/camera-retro-solid.svg
+
+markdown_extensions:
+    - admonition
+    - toc:
+        permalink: true
+
+plugins:
+    - markdownwavedrom
+    - search
+    - img2fig
+    - bibtex:
+        bib_file: "refs.bib"
+        cite_style: "pandoc"
+        
+
+extra_javascript:
+    - assets/js/wavedrom.js
+    - assets/js/default.js
+
+extra_css:
+    - assets/css/center.css
+#     - resources/dark_theme.css
+#     - resources/codehilite.css

@@ -1,0 +1,17 @@
+CAPI=2:
+name : bucknalla:peripherals:lepton:0.0.1
+
+filesets:
+  rtl:
+      files:
+      - lepton.v : {file_type : verilogSource}
+
+  zybo_z7:
+    files:
+      - zybo_z7/blinky_zybo_z7.v : {file_type : verilogSource}
+      - zybo_z7/blinky.xdc : {file_type : xdc}
+
+targets:
+  default: &default
+    filesets : [rtl]
+    toplevel: ["is_toplevel? (lepton)"]

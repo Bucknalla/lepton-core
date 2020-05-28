@@ -1,0 +1,9 @@
+000 ?Blue?IDLE
+001 ?Purple?LOAD
+010 ?Red?RESET
+011 ?Lime Green?SYNC
+# localparam IDLE = 0;
+# localparam LOAD = 1;
+# localparam RESET = 2;
+# localparam INIT = 3;
+# localparam SYNC = 4;
