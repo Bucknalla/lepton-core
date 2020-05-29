@@ -13,6 +13,7 @@ reg rst_n = 1;
 reg en = 0;
 wire spi_clk;
 reg spi_miso = 0;
+reg axis_ready = 1;
 wire spi_cs;
 
 initial begin
@@ -21,7 +22,8 @@ initial begin
         clk,
         rst_n,
         en,
-        spi_miso
+        spi_miso,
+        axis_ready
     );
     $to_myhdl(
         spi_clk,
@@ -40,6 +42,7 @@ UUT (
     .spi_clk(spi_clk),
     .en(en),
     .spi_cs(spi_cs),
+    .axi_m_tready(axis_ready),
     .spi_miso(spi_miso)
 );
 

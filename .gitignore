@@ -1,8 +1,10 @@
 .vscode
 .python-version
 site
+*.tmp
 
 *.vcd
 __pycache__
 .pytest_cache
 *.lxt
+*.vvp

@@ -28,6 +28,7 @@ def discard_block(clk, counter_valid, cs, spi_miso, discard_data):
 			# print(counter)
 			if counter == 7:
 				counter_valid.next = 1
+			if counter == 8:
 				counter.next = 1
 
 	return instances()
@@ -40,6 +41,7 @@ def bench():
 	spi_clk = Signal(bool())	
 	spi_cs = Signal(bool())
 	spi_miso = Signal(bool(1))
+	axis_ready = Signal(bool(1))
 	counter_valid = Signal(bool(0))
 	random_data = Signal(intbv(0x12)[8:])
 
@@ -57,6 +59,7 @@ def bench():
 		rst_n=rst_n,
 		spi_clk=spi_clk,
 		spi_cs=spi_cs,
+		axis_ready=axis_ready,
 		spi_miso=spi_miso,
 		en=en
 	)
@@ -88,9 +91,15 @@ def bench():
 		yield delay(60)
 		yield counter_valid
 		random_data.next = 0x56
-
+		yield delay(60)
+		yield counter_valid
+		random_data.next = 0x78
+		yield delay(2000)
+		axis_ready.next = 0
+		yield delay(4000)
+		axis_ready.next = 1
 		# rst_n.next = not rst_n
-		yield delay(400000)
+		yield delay(800000)
 		assert True
 		raise StopSimulation
 
@@ -98,7 +107,7 @@ def bench():
 
 def test_bench():
 	sim = Simulation(bench())
-	sim.run()
+	sim.run(1000000)
 
 if __name__ == "__main__":
 	print("Running test...")
