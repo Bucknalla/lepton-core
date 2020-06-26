@@ -8,3 +8,8 @@ __pycache__
 .pytest_cache
 *.lxt
 *.vvp
+
+# Xilinx
+*.jou
+*.log
+*.str

@@ -1,0 +1,11 @@
+set_property SRC_FILE_INFO {cfile:/home/alex/GitHub/lepton-core/rtl/xilinx/zyboz7.srcs/constrs_1/imports/rtl/zybo.xdc rfile:../../../zyboz7.srcs/constrs_1/imports/rtl/zybo.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN K17   IOSTANDARD LVCMOS33 } [get_ports { sysclk }]; #IO_L12P_T1_MRCC_35 Sch=sysclk
+set_property src_info {type:XDC file:1 line:20 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN K18   IOSTANDARD LVCMOS33 } [get_ports { rst }]; #IO_L12N_T1_MRCC_35 Sch=btn[0]
+set_property src_info {type:XDC file:1 line:126 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN V15   IOSTANDARD LVCMOS33     } [get_ports { spi_clk_0 }]; #IO_L10P_T1_34 Sch=jc_p[1]
+set_property src_info {type:XDC file:1 line:127 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS33     } [get_ports { spi_cs_0 }]; #IO_L10N_T1_34 Sch=jc_n[1]
+set_property src_info {type:XDC file:1 line:128 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T11   IOSTANDARD LVCMOS33     } [get_ports { spi_miso_0 }]; #IO_L1P_T0_34 Sch=jc_p[2]

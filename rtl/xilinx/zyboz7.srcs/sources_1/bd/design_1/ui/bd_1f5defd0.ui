@@ -1,0 +1,29 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 TLS
+#  -string -flagsOSRD
+preplace port spi_miso_0 -pg 1 -y 10 -defaultsOSRD
+preplace port spi_cs_0 -pg 1 -y 10 -defaultsOSRD
+preplace port rst -pg 1 -y -310 -defaultsOSRD
+preplace port sysclk -pg 1 -y 130 -defaultsOSRD
+preplace port spi_clk_0 -pg 1 -y -10 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -y 190 -defaultsOSRD
+preplace inst spi_master_0 -pg 1 -lvl 1 -y 20 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 2 -y -20 -defaultsOSRD
+preplace netloc spi_master_0_spi_cs 1 1 2 630 120 890
+preplace netloc rst_1 1 0 1 -40
+preplace netloc spi_master_0_axi_m_tdata 1 1 1 580
+preplace netloc spi_miso_0_1 1 0 2 -50J -120 610
+preplace netloc xlconstant_0_dout 1 0 2 -30 -110 570
+preplace netloc spi_master_0_axi_m_tvalid 1 1 1 600
+preplace netloc spi_master_0_axi_m_tlast 1 1 1 590
+preplace netloc Net 1 0 2 -60 -130 620
+preplace netloc spi_master_0_error 1 1 1 620
+preplace netloc spi_master_0_spi_clk 1 1 2 640 110 880J
+levelinfo -pg 1 -80 410 780 910 -top -490 -bot 930
+"
+}
+{
+   "da_clkrst_cnt":"1",
+   "da_ps7_cnt":"1"
+}
