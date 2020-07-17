@@ -157,6 +157,7 @@ class zynq_ultra_ps_e_tlm : public sc_core::sc_module   {
     sc_core::sc_in<sc_dt::sc_bv<1> >  pl_ps_irq0;
     sc_core::sc_out<bool> pl_resetn0;
     sc_core::sc_out<bool> pl_clk0;
+    sc_core::sc_out<bool> pl_clk1;
      
     // Xtlm aximm slave sockets are delcared here. these XTLM sockets will hierachically bound with 
     // slave sockets defined in vivado generated wrapper.
@@ -181,7 +182,9 @@ class zynq_ultra_ps_e_tlm : public sc_core::sc_module   {
         ,pl_ps_irq0("pl_ps_irq0")
         ,pl_resetn0("pl_resetn0")
         ,pl_clk0("pl_clk0")
+        ,pl_clk1("pl_clk1")
         ,pl_clk0_clk("pl_clk0_clk", sc_time(10.0,sc_core::SC_NS))//clock period in nanoseconds = 1000/freq(in MZ)
+        ,pl_clk1_clk("pl_clk1_clk", sc_time(50.0,sc_core::SC_NS))//clock period in nanoseconds = 1000/freq(in MZ)
     {
         //creating instances of xtlm slave sockets
 
@@ -233,6 +236,9 @@ class zynq_ultra_ps_e_tlm : public sc_core::sc_module   {
         SC_METHOD(trigger_pl_clk0_pin);
         sensitive << pl_clk0_clk;
         dont_initialize();
+        SC_METHOD(trigger_pl_clk1_pin);
+        sensitive << pl_clk1_clk;
+        dont_initialize();
         
         m_tlm2xtlm[0]->registerUserExtensionHandlerCallback(&get_extensions_from_tlm);
         m_tlm2xtlm[1]->registerUserExtensionHandlerCallback(&get_extensions_from_tlm);
@@ -279,12 +285,18 @@ class zynq_ultra_ps_e_tlm : public sc_core::sc_module   {
     // sc_clocks for generating pl clocks
     // output pins pl_clk0..3 are drived by these clocks
     sc_core::sc_clock pl_clk0_clk;
+    sc_core::sc_clock pl_clk1_clk;
 
     
     //Method which is sentive to pl_clk0_clk sc_clock object
     //pl_clk0 pin written based on pl_clk0_clk clock value 
     void trigger_pl_clk0_pin()    {
         pl_clk0.write(pl_clk0_clk.read());
+    }
+    //Method which is sentive to pl_clk1_clk sc_clock object
+    //pl_clk1 pin written based on pl_clk1_clk clock value 
+    void trigger_pl_clk1_pin()    {
+        pl_clk1.write(pl_clk1_clk.read());
     }
 
     void pl_ps_irq0_method()    {

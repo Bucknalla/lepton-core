@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu3eg-sbva484-1-e" LaunchTime="1593095926">
-  <File Type="VDS-TIMING-PB" Name="design_1_wrapper_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xczu3eg-sbva484-1-e" LaunchTime="1593530769">
+  <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
+  <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
+  <File Type="RDS-RDS" Name="design_1_wrapper.vds"/>
   <File Type="RDS-DCP" Name="design_1_wrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="design_1_wrapper_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="design_1_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="design_1_wrapper.vds"/>
-  <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
-  <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/rtl/spi_master.v">
+    <File Path="$PSRCDIR/sources_1/imports/lepton3/lepton.vhd">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../spi_master.v"/>
-        <Attr Name="ImportTime" Val="1591998810"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../flir-lepton-vhdl/lepton3/lepton3.ipdefs/lepton_rtl.srcs_0/sources_1/imports/lepton3/lepton.vhd"/>
+        <Attr Name="ImportTime" Val="1593481789"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -29,6 +25,16 @@
     </File>
     <File Path="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/spi_master.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../spi_master.v"/>
+        <Attr Name="ImportTime" Val="1591998810"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -61,7 +67,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_spi_master_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_zynq_ultra_ps_e_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_lepton_if_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_proc_sys_reset_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_ila_0_0"/>
 </GenRun>

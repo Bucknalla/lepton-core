@@ -255,8 +255,8 @@
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK0.PHASE">0.000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK1.ASSOCIATED_BUSIF"/>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK1.ASSOCIATED_RESET"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK1.CLK_DOMAIN"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK1.FREQ_HZ">100000000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK1.CLK_DOMAIN">design_1_zynq_ultra_ps_e_0_0_pl_clk1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK1.FREQ_HZ">20000000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK1.INSERT_VIP">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK1.PHASE">0.000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PL_CLK2.ASSOCIATED_BUSIF"/>
@@ -1547,15 +1547,15 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PCAP_CTRL__FREQMHZ">200</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PCAP_CTRL__SRCSEL">IOPLL</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL0_REF_CTRL__ACT_FREQMHZ">100.000000</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL0_REF_CTRL__DIVISOR0">15</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL0_REF_CTRL__DIVISOR1">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL0_REF_CTRL__DIVISOR0">5</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL0_REF_CTRL__DIVISOR1">3</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ">100</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL0_REF_CTRL__SRCSEL">IOPLL</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ">24.999975</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0">15</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR1">4</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ">20.000000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0">25</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR1">3</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL1_REF_CTRL__FREQMHZ">100</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL1_REF_CTRL__SRCSEL">RPLL</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL1_REF_CTRL__SRCSEL">IOPLL</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL2_REF_CTRL__ACT_FREQMHZ">299.999700</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL2_REF_CTRL__DIVISOR0">5</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__CRL_APB__PL2_REF_CTRL__DIVISOR1">1</spirit:configurableElementValue>
@@ -1831,7 +1831,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__FPD_SLCR__WDT1__FREQMHZ">100.000000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__FPD_SLCR__WDT_CLK_SEL__SELECT">APB</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__FPGA_PL0_ENABLE">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__FPGA_PL1_ENABLE">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__FPGA_PL1_ENABLE">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__FPGA_PL2_ENABLE">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__FPGA_PL3_ENABLE">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__FP__POWER__ON">1</spirit:configurableElementValue>
@@ -2164,7 +2164,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__PJTAG__PERIPHERAL__ENABLE">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__PJTAG__PERIPHERAL__IO">&lt;Select></spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__PL_CLK0_BUF">TRUE</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__PL_CLK1_BUF">FALSE</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__PL_CLK1_BUF">TRUE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__PL_CLK2_BUF">FALSE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__PL_CLK3_BUF">FALSE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PSU__PL__POWER__ON">1</spirit:configurableElementValue>
@@ -2573,6 +2573,11 @@ FA50000;FFA5FFFF;1|FPD;AFI_5;FD3B0000;FD3BFFFF;1|FPD;AFI_4;FD3A0000;FD3AFFFF;1|F
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL_CLK0.CLK_DOMAIN" xilinx:valuePermission="bd"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL_CLK0.FREQ_HZ" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
             <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL_CLK0.PHASE" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL_CLK1.ASSOCIATED_BUSIF" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL_CLK1.ASSOCIATED_RESET" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL_CLK1.CLK_DOMAIN" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL_CLK1.FREQ_HZ" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PL_CLK1.PHASE" xilinx:valuePermission="bd"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.PSU_BANK_0_IO_STANDARD" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.PSU_BANK_1_IO_STANDARD" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.PSU_BANK_2_IO_STANDARD" xilinx:valueSource="user"/>

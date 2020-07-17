@@ -1,0 +1,383 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jul 16 15:35:45 2020
+# Process ID: 509189
+# Current directory: /home/alex/GitHub/lepton-core/rtl/xilinx/zc104.runs/design_1_lepton_vospi_0_0_synth_1
+# Command line: vivado -log design_1_lepton_vospi_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_lepton_vospi_0_0.tcl
+# Log file: /home/alex/GitHub/lepton-core/rtl/xilinx/zc104.runs/design_1_lepton_vospi_0_0_synth_1/design_1_lepton_vospi_0_0.vds
+# Journal file: /home/alex/GitHub/lepton-core/rtl/xilinx/zc104.runs/design_1_lepton_vospi_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_lepton_vospi_0_0.tcl -notrace
+Command: synth_design -top design_1_lepton_vospi_0_0 -part xczu7ev-ffvc1156-2-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 509231 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1388.801 ; gain = 25.852 ; free physical = 4262 ; free virtual = 15750
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_lepton_vospi_0_0' [/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/bd/design_1/ip/design_1_lepton_vospi_0_0/synth/design_1_lepton_vospi_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'lepton_vospi' [/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/new/lepton.v:3]
+	Parameter AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter SPI_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter VOSPI_LINE_LENGTH bound to: 160 - type: integer 
+	Parameter idle bound to: 0 - type: integer 
+	Parameter sync bound to: 1 - type: integer 
+	Parameter crc bound to: 2 - type: integer 
+	Parameter packet bound to: 3 - type: integer 
+	Parameter check bound to: 4 - type: integer 
+	Parameter reset bound to: 5 - type: integer 
+	Parameter axis_idle bound to: 0 - type: integer 
+	Parameter axis_data bound to: 1 - type: integer 
+	Parameter axis_data_wait bound to: 2 - type: integer 
+WARNING: [Synth 8-5788] Register int_cs_reg in module lepton_vospi is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/new/lepton.v:137]
+WARNING: [Synth 8-5788] Register seg_num_reg in module lepton_vospi is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/new/lepton.v:86]
+WARNING: [Synth 8-5788] Register axis_m_tdata_reg in module lepton_vospi is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/new/lepton.v:175]
+INFO: [Synth 8-6155] done synthesizing module 'lepton_vospi' (1#1) [/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/new/lepton.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_lepton_vospi_0_0' (2#1) [/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/bd/design_1/ip/design_1_lepton_vospi_0_0/synth/design_1_lepton_vospi_0_0.v:58]
+WARNING: [Synth 8-3331] design lepton_vospi has unconnected port ctrl[1]
+WARNING: [Synth 8-3331] design lepton_vospi has unconnected port ctrl[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1434.551 ; gain = 71.602 ; free physical = 4228 ; free virtual = 15714
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1434.551 ; gain = 71.602 ; free physical = 4227 ; free virtual = 15713
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1434.551 ; gain = 71.602 ; free physical = 4227 ; free virtual = 15713
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2466.066 ; gain = 0.000 ; free physical = 3685 ; free virtual = 15176
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2466.066 ; gain = 0.000 ; free physical = 3685 ; free virtual = 15176
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2466.066 ; gain = 0.000 ; free physical = 3685 ; free virtual = 15173
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:24 . Memory (MB): peak = 2466.066 ; gain = 1103.117 ; free physical = 3797 ; free virtual = 15284
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:24 . Memory (MB): peak = 2466.066 ; gain = 1103.117 ; free physical = 3797 ; free virtual = 15284
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:24 . Memory (MB): peak = 2466.066 ; gain = 1103.117 ; free physical = 3797 ; free virtual = 15284
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'lepton_vospi'
+INFO: [Synth 8-802] inferred FSM for state register 'axis_current_state_reg' in module 'lepton_vospi'
+INFO: [Synth 8-5545] ROM "shift_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "current_state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "current_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "current_state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "pixel_count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "int_cs" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "seg_num" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "int_cs" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "frame_delay" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "current_state" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                             0000
+                    sync |                              001 |                             0001
+                     crc |                              010 |                             0010
+                  packet |                              011 |                             0011
+                   check |                              100 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'lepton_vospi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               axis_idle |                               00 |                             0000
+               axis_data |                               01 |                             0001
+          axis_data_wait |                               10 |                             0010
+                  iSTATE |                               11 |                             1111
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'axis_current_state_reg' using encoding 'sequential' in module 'lepton_vospi'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:24 . Memory (MB): peak = 2466.066 ; gain = 1103.117 ; free physical = 3789 ; free virtual = 15276
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   5 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 14    
+	   5 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module lepton_vospi 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   5 Input     32 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 14    
+	   5 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "inst/shift_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "inst/seg_num" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst/int_cs" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "inst/current_state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "inst/pixel_count" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst/current_state" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design design_1_lepton_vospi_0_0 has unconnected port ctrl[1]
+WARNING: [Synth 8-3331] design design_1_lepton_vospi_0_0 has unconnected port ctrl[0]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 2466.066 ; gain = 1103.117 ; free physical = 3775 ; free virtual = 15264
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:01:05 . Memory (MB): peak = 2750.684 ; gain = 1387.734 ; free physical = 3184 ; free virtual = 14672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:01:05 . Memory (MB): peak = 2750.684 ; gain = 1387.734 ; free physical = 3184 ; free virtual = 14672
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:01:05 . Memory (MB): peak = 2770.723 ; gain = 1407.773 ; free physical = 3182 ; free virtual = 14670
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2770.723 ; gain = 1407.773 ; free physical = 3181 ; free virtual = 14669
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2770.723 ; gain = 1407.773 ; free physical = 3181 ; free virtual = 14669
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2770.723 ; gain = 1407.773 ; free physical = 3181 ; free virtual = 14669
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2770.723 ; gain = 1407.773 ; free physical = 3181 ; free virtual = 14669
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2770.723 ; gain = 1407.773 ; free physical = 3181 ; free virtual = 14669
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2770.723 ; gain = 1407.773 ; free physical = 3181 ; free virtual = 14669
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY8 |     4|
+|2     |LUT1   |     5|
+|3     |LUT2   |    41|
+|4     |LUT3   |     8|
+|5     |LUT4   |    20|
+|6     |LUT5   |    15|
+|7     |LUT6   |    24|
+|8     |FDCE   |    92|
+|9     |FDPE   |     1|
+|10    |FDRE   |    37|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------------+------+
+|      |Instance |Module       |Cells |
++------+---------+-------------+------+
+|1     |top      |             |   247|
+|2     |  inst   |lepton_vospi |   247|
++------+---------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2770.723 ; gain = 1407.773 ; free physical = 3181 ; free virtual = 14669
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:46 . Memory (MB): peak = 2770.723 ; gain = 376.258 ; free physical = 3219 ; free virtual = 14706
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:01:05 . Memory (MB): peak = 2770.730 ; gain = 1407.773 ; free physical = 3219 ; free virtual = 14706
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2789.723 ; gain = 0.000 ; free physical = 3107 ; free virtual = 14594
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+36 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:01:06 . Memory (MB): peak = 2789.723 ; gain = 1426.922 ; free physical = 3162 ; free virtual = 14649
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2789.723 ; gain = 0.000 ; free physical = 3162 ; free virtual = 14649
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.runs/design_1_lepton_vospi_0_0_synth_1/design_1_lepton_vospi_0_0.dcp' has been generated.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2813.734 ; gain = 0.000 ; free physical = 3145 ; free virtual = 14633
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.runs/design_1_lepton_vospi_0_0_synth_1/design_1_lepton_vospi_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_lepton_vospi_0_0_utilization_synth.rpt -pb design_1_lepton_vospi_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 16 15:37:04 2020...

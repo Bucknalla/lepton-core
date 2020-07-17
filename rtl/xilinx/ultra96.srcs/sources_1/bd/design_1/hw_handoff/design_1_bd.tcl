@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# spi_master
+# lepton_if
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -165,7 +165,14 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
+  set rst [ create_bd_port -dir I -type rst rst ]
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] $rst
   set spi_clk_0 [ create_bd_port -dir O -type clk spi_clk_0 ]
+  set_property -dict [ list \
+   CONFIG.ASSOCIATED_RESET {rst} \
+ ] $spi_clk_0
   set spi_cs_0 [ create_bd_port -dir O spi_cs_0 ]
   set spi_miso_0 [ create_bd_port -dir I spi_miso_0 ]
 
@@ -173,62 +180,46 @@ proc create_root_design { parentCell } {
   set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
   set_property -dict [ list \
    CONFIG.ALL_PROBE_SAME_MU_CNT {2} \
-   CONFIG.C_ADV_TRIGGER {true} \
-   CONFIG.C_DATA_DEPTH {16384} \
+   CONFIG.C_DATA_DEPTH {65536} \
    CONFIG.C_ENABLE_ILA_AXI_MON {false} \
    CONFIG.C_EN_STRG_QUAL {1} \
    CONFIG.C_MONITOR_TYPE {Native} \
-   CONFIG.C_NUM_OF_PROBES {12} \
+   CONFIG.C_NUM_OF_PROBES {14} \
    CONFIG.C_PROBE0_MU_CNT {2} \
-   CONFIG.C_PROBE0_TYPE {1} \
-   CONFIG.C_PROBE0_WIDTH {32} \
    CONFIG.C_PROBE10_MU_CNT {2} \
-   CONFIG.C_PROBE10_TYPE {1} \
-   CONFIG.C_PROBE10_WIDTH {5} \
+   CONFIG.C_PROBE10_WIDTH {16} \
    CONFIG.C_PROBE11_MU_CNT {2} \
-   CONFIG.C_PROBE11_TYPE {1} \
+   CONFIG.C_PROBE11_WIDTH {4} \
+   CONFIG.C_PROBE12_MU_CNT {2} \
+   CONFIG.C_PROBE12_WIDTH {32} \
+   CONFIG.C_PROBE13_MU_CNT {2} \
+   CONFIG.C_PROBE13_WIDTH {32} \
    CONFIG.C_PROBE1_MU_CNT {2} \
-   CONFIG.C_PROBE1_TYPE {1} \
    CONFIG.C_PROBE2_MU_CNT {2} \
-   CONFIG.C_PROBE2_TYPE {1} \
    CONFIG.C_PROBE3_MU_CNT {2} \
-   CONFIG.C_PROBE3_TYPE {1} \
    CONFIG.C_PROBE4_MU_CNT {2} \
-   CONFIG.C_PROBE4_TYPE {1} \
    CONFIG.C_PROBE5_MU_CNT {2} \
-   CONFIG.C_PROBE5_TYPE {1} \
    CONFIG.C_PROBE6_MU_CNT {2} \
-   CONFIG.C_PROBE6_TYPE {1} \
    CONFIG.C_PROBE7_MU_CNT {2} \
-   CONFIG.C_PROBE7_TYPE {2} \
    CONFIG.C_PROBE8_MU_CNT {2} \
-   CONFIG.C_PROBE8_TYPE {1} \
-   CONFIG.C_PROBE8_WIDTH {9} \
+   CONFIG.C_PROBE8_WIDTH {8} \
    CONFIG.C_PROBE9_MU_CNT {2} \
-   CONFIG.C_PROBE9_TYPE {1} \
-   CONFIG.C_PROBE9_WIDTH {16} \
-   CONFIG.C_TRIGIN_EN {false} \
+   CONFIG.C_PROBE9_WIDTH {4} \
  ] $ila_0
 
-  # Create instance: spi_master_0, and set properties
-  set block_name spi_master
-  set block_cell_name spi_master_0
-  if { [catch {set spi_master_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+  # Create instance: lepton_if_0, and set properties
+  set block_name lepton_if
+  set block_cell_name lepton_if_0
+  if { [catch {set lepton_if_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
-   } elseif { $spi_master_0 eq "" } {
+   } elseif { $lepton_if_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
-  # Create instance: xlconstant_0, and set properties
-  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
-
-  # Create instance: xlconstant_1, and set properties
-  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
-  set_property -dict [ list \
-   CONFIG.CONST_VAL {0} \
- ] $xlconstant_1
+  # Create instance: proc_sys_reset_0, and set properties
+  set proc_sys_reset_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0 ]
 
   # Create instance: zynq_ultra_ps_e_0, and set properties
   set zynq_ultra_ps_e_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:zynq_ultra_ps_e:3.2 zynq_ultra_ps_e_0 ]
@@ -505,14 +496,14 @@ proc create_root_design { parentCell } {
    CONFIG.PSU__CRL_APB__PCAP_CTRL__DIVISOR0 {8} \
    CONFIG.PSU__CRL_APB__PCAP_CTRL__SRCSEL {IOPLL} \
    CONFIG.PSU__CRL_APB__PL0_REF_CTRL__ACT_FREQMHZ {100.000000} \
-   CONFIG.PSU__CRL_APB__PL0_REF_CTRL__DIVISOR0 {15} \
-   CONFIG.PSU__CRL_APB__PL0_REF_CTRL__DIVISOR1 {1} \
+   CONFIG.PSU__CRL_APB__PL0_REF_CTRL__DIVISOR0 {5} \
+   CONFIG.PSU__CRL_APB__PL0_REF_CTRL__DIVISOR1 {3} \
    CONFIG.PSU__CRL_APB__PL0_REF_CTRL__SRCSEL {IOPLL} \
-   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ {24.999975} \
-   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0 {15} \
-   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR1 {4} \
+   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ {20.000000} \
+   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0 {25} \
+   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__DIVISOR1 {3} \
    CONFIG.PSU__CRL_APB__PL1_REF_CTRL__FREQMHZ {100} \
-   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__SRCSEL {RPLL} \
+   CONFIG.PSU__CRL_APB__PL1_REF_CTRL__SRCSEL {IOPLL} \
    CONFIG.PSU__CRL_APB__PL2_REF_CTRL__ACT_FREQMHZ {299.999700} \
    CONFIG.PSU__CRL_APB__PL2_REF_CTRL__DIVISOR0 {5} \
    CONFIG.PSU__CRL_APB__PL2_REF_CTRL__DIVISOR1 {1} \
@@ -689,7 +680,7 @@ proc create_root_design { parentCell } {
    CONFIG.PSU__FPD_SLCR__WDT1__FREQMHZ {100.000000} \
    CONFIG.PSU__FPD_SLCR__WDT_CLK_SEL__SELECT {APB} \
    CONFIG.PSU__FPGA_PL0_ENABLE {1} \
-   CONFIG.PSU__FPGA_PL1_ENABLE {0} \
+   CONFIG.PSU__FPGA_PL1_ENABLE {1} \
    CONFIG.PSU__FPGA_PL2_ENABLE {0} \
    CONFIG.PSU__FPGA_PL3_ENABLE {0} \
    CONFIG.PSU__GEM3_COHERENCY {0} \
@@ -729,7 +720,7 @@ proc create_root_design { parentCell } {
    CONFIG.PSU__MAXIGP2__DATA_WIDTH {32} \
    CONFIG.PSU__OVERRIDE__BASIC_CLOCK {1} \
    CONFIG.PSU__PL_CLK0_BUF {TRUE} \
-   CONFIG.PSU__PL_CLK1_BUF {FALSE} \
+   CONFIG.PSU__PL_CLK1_BUF {TRUE} \
    CONFIG.PSU__PL_CLK2_BUF {FALSE} \
    CONFIG.PSU__PL_CLK3_BUF {FALSE} \
    CONFIG.PSU__PMU_COHERENCY {0} \
@@ -853,21 +844,22 @@ proc create_root_design { parentCell } {
  ] $zynq_ultra_ps_e_0
 
   # Create port connections
-  connect_bd_net -net Net [get_bd_pins ila_0/clk] [get_bd_pins spi_master_0/clk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm1_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
-  connect_bd_net -net spi_master_0_axi_m_tdata [get_bd_pins ila_0/probe0] [get_bd_pins spi_master_0/axi_m_tdata]
-  connect_bd_net -net spi_master_0_axi_m_tlast [get_bd_pins ila_0/probe1] [get_bd_pins spi_master_0/axi_m_tlast]
-  connect_bd_net -net spi_master_0_axi_m_tvalid [get_bd_pins ila_0/probe2] [get_bd_pins spi_master_0/axi_m_tvalid]
-  connect_bd_net -net spi_master_0_debug_clk [get_bd_pins ila_0/probe7] [get_bd_pins spi_master_0/debug_clk]
-  connect_bd_net -net spi_master_0_discard [get_bd_pins ila_0/probe11] [get_bd_pins spi_master_0/discard]
-  connect_bd_net -net spi_master_0_error [get_bd_pins ila_0/probe3] [get_bd_pins spi_master_0/error]
-  connect_bd_net -net spi_master_0_spi_bit_counter_wire [get_bd_pins ila_0/probe10] [get_bd_pins spi_master_0/spi_bit_counter_wire]
-  connect_bd_net -net spi_master_0_spi_byte_counter_wire [get_bd_pins ila_0/probe8] [get_bd_pins spi_master_0/spi_byte_counter_wire]
-  connect_bd_net -net spi_master_0_spi_clk [get_bd_ports spi_clk_0] [get_bd_pins ila_0/probe4] [get_bd_pins spi_master_0/spi_clk]
-  connect_bd_net -net spi_master_0_spi_crc_bytes [get_bd_pins ila_0/probe9] [get_bd_pins spi_master_0/spi_crc_bytes]
-  connect_bd_net -net spi_master_0_spi_cs [get_bd_ports spi_cs_0] [get_bd_pins ila_0/probe6] [get_bd_pins spi_master_0/spi_cs]
-  connect_bd_net -net spi_miso_0_1 [get_bd_ports spi_miso_0] [get_bd_pins ila_0/probe5] [get_bd_pins spi_master_0/spi_miso]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins spi_master_0/axi_m_tready] [get_bd_pins spi_master_0/en] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlconstant_1_dout [get_bd_pins spi_master_0/rst_n] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net Net [get_bd_pins ila_0/clk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm0_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/maxihpm1_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
+  connect_bd_net -net lepton_if_0_addrb [get_bd_pins ila_0/probe12] [get_bd_pins lepton_if_0/addrb]
+  connect_bd_net -net lepton_if_0_enb [get_bd_pins ila_0/probe3] [get_bd_pins lepton_if_0/enb]
+  connect_bd_net -net lepton_if_0_line_out [get_bd_pins ila_0/probe8] [get_bd_pins lepton_if_0/line_out]
+  connect_bd_net -net lepton_if_0_line_val [get_bd_pins ila_0/probe1] [get_bd_pins lepton_if_0/line_val]
+  connect_bd_net -net lepton_if_0_rstb [get_bd_pins ila_0/probe2] [get_bd_pins lepton_if_0/rstb]
+  connect_bd_net -net lepton_if_0_seg_out [get_bd_pins ila_0/probe9] [get_bd_pins lepton_if_0/seg_out]
+  connect_bd_net -net lepton_if_0_shift_count_out [get_bd_pins ila_0/probe13] [get_bd_pins lepton_if_0/shift_count_out]
+  connect_bd_net -net lepton_if_0_shift_reg_out [get_bd_pins ila_0/probe10] [get_bd_pins lepton_if_0/shift_reg_out]
+  connect_bd_net -net lepton_if_0_valid_out [get_bd_pins ila_0/probe0] [get_bd_pins lepton_if_0/valid_out]
+  connect_bd_net -net lepton_if_0_web [get_bd_pins ila_0/probe11] [get_bd_pins lepton_if_0/web]
+  connect_bd_net -net rst_1 [get_bd_ports rst] [get_bd_pins ila_0/probe7] [get_bd_pins lepton_if_0/reset] [get_bd_pins proc_sys_reset_0/ext_reset_in]
+  connect_bd_net -net spi_master_0_spi_clk [get_bd_ports spi_clk_0] [get_bd_pins ila_0/probe4] [get_bd_pins lepton_if_0/sclk]
+  connect_bd_net -net spi_master_0_spi_cs [get_bd_ports spi_cs_0] [get_bd_pins ila_0/probe5] [get_bd_pins lepton_if_0/ss]
+  connect_bd_net -net spi_miso_0_1 [get_bd_ports spi_miso_0] [get_bd_pins ila_0/probe6] [get_bd_pins lepton_if_0/miso]
+  connect_bd_net -net zynq_ultra_ps_e_0_pl_clk1 [get_bd_pins lepton_if_0/clk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk1]
 
   # Create address segments
 

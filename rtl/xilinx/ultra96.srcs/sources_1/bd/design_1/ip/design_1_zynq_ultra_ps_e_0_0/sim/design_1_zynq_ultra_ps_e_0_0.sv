@@ -1574,7 +1574,8 @@
   maxigp1_arqos,
   pl_ps_irq0,
   pl_resetn0,
-  pl_clk0
+  pl_clk0,
+  pl_clk1
  );
 
 //PARAMETERS
@@ -1603,7 +1604,7 @@
       parameter C_EN_FIFO_ENET2 = "0";
       parameter C_EN_FIFO_ENET3 = "0";
       parameter C_PL_CLK0_BUF = "TRUE";
-      parameter C_PL_CLK1_BUF = "FALSE";
+      parameter C_PL_CLK1_BUF = "TRUE";
       parameter C_PL_CLK2_BUF = "FALSE";
       parameter C_PL_CLK3_BUF = "FALSE";
       parameter C_TRACE_PIPELINE_WIDTH = 8;
@@ -1702,6 +1703,7 @@
       input  [0 : 0] pl_ps_irq0;
       output  pl_resetn0;
       output  pl_clk0;
+      output  pl_clk1;
 
 //REG DECLARATIONS
 
@@ -1763,6 +1765,7 @@
       reg [3 : 0] maxigp1_arqos;
       reg pl_resetn0;
       reg pl_clk0;
+      reg pl_clk1;
       string ip_name;
       reg disable_port;
 
@@ -2196,6 +2199,7 @@ output bit maxigp1_rready
 );
 
 import "DPI-C" function void ps8_simulate_single_cycle_pl_clk0();
+import "DPI-C" function void ps8_simulate_single_cycle_pl_clk1();
    export "DPI-C" function ps8_stop_sim;
    function void ps8_stop_sim();
         $display("End of simulation");
@@ -2261,6 +2265,7 @@ import "DPI-C" function void ps8_simulate_single_cycle_pl_clk0();
   ps8_init_m_axi_hpm1_fpd($bits(maxigp1_awid),$bits(maxigp1_awaddr),$bits(maxigp1_awlen),$bits(maxigp1_awsize),$bits(maxigp1_awburst),$bits(maxigp1_awlock),$bits(maxigp1_awcache),$bits(maxigp1_awprot),$bits(maxigp1_awqos),$bits(maxigp1_awuser),$bits(maxigp1_awvalid),$bits(maxigp1_awready),$bits(maxigp1_wdata),$bits(maxigp1_wstrb),$bits(maxigp1_wlast),$bits(maxigp1_wvalid),$bits(maxigp1_wready),$bits(maxigp1_bid),$bits(maxigp1_bresp),$bits(maxigp1_bvalid),$bits(maxigp1_bready),$bits(maxigp1_arid),$bits(maxigp1_araddr),$bits(maxigp1_arlen),$bits(maxigp1_arsize),$bits(maxigp1_arburst),$bits(maxigp1_arlock),$bits(maxigp1_arcache),$bits(maxigp1_arprot),$bits(maxigp1_arqos),$bits(maxigp1_aruser),$bits(maxigp1_arvalid),$bits(maxigp1_arready),$bits(maxigp1_rid),$bits(maxigp1_rdata),$bits(maxigp1_rresp),$bits(maxigp1_rlast),$bits(maxigp1_rvalid),$bits(maxigp1_rready));
   ps8_init_c_model();
   pl_clk0=0;
+  pl_clk1=0;
   end
   initial
   begin
@@ -2273,6 +2278,19 @@ import "DPI-C" function void ps8_simulate_single_cycle_pl_clk0();
   begin
    ps8_set_ip_context(ip_name);
    ps8_simulate_single_cycle_pl_clk0();
+  end
+
+  initial
+  begin
+     pl_clk1 = 1'b0;
+  end
+
+  always #(5.0) pl_clk1 <= ~pl_clk1;
+
+  always@(posedge pl_clk1)
+  begin
+   ps8_set_ip_context(ip_name);
+   ps8_simulate_single_cycle_pl_clk1();
   end
 
 

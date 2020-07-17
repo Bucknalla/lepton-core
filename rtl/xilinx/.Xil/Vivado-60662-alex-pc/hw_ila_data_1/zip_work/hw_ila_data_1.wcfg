@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/alex/GitHub/lepton-core/rtl/xilinx/zc104.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="640001fs"></ZoomEndTime>
+      <Cursor1Time time="209000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="362"></NameColumnWidth>
+      <ValueColumnWidth column_width="198"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="logic" fp_name="design_1_i/lepton_if_0_sclk">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_if_0_sclk</obj_property>
+      <obj_property name="ObjectShortName">lepton_if_0_sclk</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/lepton_if_0_ss">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_if_0_ss</obj_property>
+      <obj_property name="ObjectShortName">lepton_if_0_ss</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="design_1_i/lepton_vospi_0_axis_m_tdata">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_axis_m_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_axis_m_tdata[31:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/lepton_vospi_0_axis_m_tlast">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_axis_m_tlast</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_axis_m_tlast</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/lepton_vospi_0_axis_m_tuser">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_axis_m_tuser</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_axis_m_tuser</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/lepton_vospi_0_axis_m_tvalid">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_axis_m_tvalid</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_axis_m_tvalid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="design_1_i/lepton_vospi_0_line_out">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_line_out[11:0]</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_line_out[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Reversed">false</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/lepton_vospi_0_line_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_line_val</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_line_val</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="design_1_i/lepton_vospi_0_seg_num">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_seg_num[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_seg_num[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Reversed">false</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/miso_0_1">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/miso_0_1</obj_property>
+      <obj_property name="ObjectShortName">miso_0_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/Net">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/Net</obj_property>
+      <obj_property name="ObjectShortName">Net</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="design_1_i/lepton_vospi_0_current_state_wire">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_current_state_wire[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_current_state_wire[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/axi_gpio_0_gpio_io_o">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/axi_gpio_0_gpio_io_o</obj_property>
+      <obj_property name="ObjectShortName">axi_gpio_0_gpio_io_o</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="design_1_i/lepton_vospi_0_seg_num">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_seg_num[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_seg_num[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="design_1_i/lepton_vospi_0_shift_reg_wire">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_shift_reg_wire[15:0]</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_shift_reg_wire[15:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="design_1_i/lepton_vospi_0_mode">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">design_1_i/lepton_vospi_0_mode[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lepton_vospi_0_mode[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>

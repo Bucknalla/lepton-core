@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Jun 24 11:22:58 2020
-# Process ID: 51268
+# Start of session at: Tue Jun 30 14:50:15 2020
+# Process ID: 530988
 # Current directory: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.runs/design_1_zynq_ultra_ps_e_0_0_synth_1
 # Command line: vivado -log design_1_zynq_ultra_ps_e_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_zynq_ultra_ps_e_0_0.tcl
 # Log file: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.runs/design_1_zynq_ultra_ps_e_0_0_synth_1/design_1_zynq_ultra_ps_e_0_0.vds
@@ -15,12 +15,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu3eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 51397 
+INFO: Helper process launched with PID 531236 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1393.957 ; gain = 76.852 ; free physical = 8195 ; free virtual = 21226
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1394.391 ; gain = 67.848 ; free physical = 3596 ; free virtual = 13899
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_zynq_ultra_ps_e_0_0' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:59]
-INFO: [Synth 8-6157] synthesizing module 'zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:271]
+INFO: [Synth 8-6157] synthesizing module 'zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:272]
 	Parameter C_MAXIGP0_DATA_WIDTH bound to: 128 - type: integer 
 	Parameter C_MAXIGP1_DATA_WIDTH bound to: 128 - type: integer 
 	Parameter C_MAXIGP2_DATA_WIDTH bound to: 32 - type: integer 
@@ -34,7 +34,7 @@ INFO: [Synth 8-6157] synthesizing module 'zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e
 	Parameter C_SD0_INTERNAL_BUS_WIDTH bound to: 4 - type: integer 
 	Parameter C_SD1_INTERNAL_BUS_WIDTH bound to: 4 - type: integer 
 	Parameter C_PL_CLK0_BUF bound to: TRUE - type: string 
-	Parameter C_PL_CLK1_BUF bound to: FALSE - type: string 
+	Parameter C_PL_CLK1_BUF bound to: TRUE - type: string 
 	Parameter C_PL_CLK2_BUF bound to: FALSE - type: string 
 	Parameter C_PL_CLK3_BUF bound to: FALSE - type: string 
 	Parameter C_NUM_F2P_0_INTR_INPUTS bound to: 1 - type: integer 
@@ -60,22 +60,22 @@ INFO: [Synth 8-6157] synthesizing module 'zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e
 	Parameter C_DP_USE_VIDEO bound to: 0 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'BUFG_PS' [/opt/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:803]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG_PS' (1#1) [/opt/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:803]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:2305]
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:2306]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:2307]
 INFO: [Synth 8-6157] synthesizing module 'PS8' [/opt/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:42799]
 INFO: [Synth 8-6155] done synthesizing module 'PS8' (2#1) [/opt/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:42799]
-WARNING: [Synth 8-689] width (4) of port connection 'EMIOSDIO0DATAOUT' does not match port width (8) of module 'PS8' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:4635]
-WARNING: [Synth 8-689] width (4) of port connection 'EMIOSDIO0DATAENA' does not match port width (8) of module 'PS8' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:4636]
-WARNING: [Synth 8-689] width (4) of port connection 'EMIOSDIO1DATAOUT' does not match port width (8) of module 'PS8' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:4648]
-WARNING: [Synth 8-689] width (4) of port connection 'EMIOSDIO1DATAENA' does not match port width (8) of module 'PS8' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:4649]
-WARNING: [Synth 8-350] instance 'PS8_i' of module 'PS8' requires 1015 connections, but only 957 given [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:3825]
-WARNING: [Synth 8-3848] Net dp_audio_ref_clk in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:324]
-WARNING: [Synth 8-3848] Net irq_ipi_pl_0 in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:1344]
-WARNING: [Synth 8-3848] Net irq_ipi_pl_1 in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:1345]
-WARNING: [Synth 8-3848] Net irq_ipi_pl_2 in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:1346]
-WARNING: [Synth 8-3848] Net irq_ipi_pl_3 in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:1347]
-INFO: [Synth 8-6155] done synthesizing module 'zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e' (3#1) [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:271]
-WARNING: [Synth 8-350] instance 'inst' of module 'zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e' requires 1491 connections, but only 1487 given [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:359]
+WARNING: [Synth 8-689] width (4) of port connection 'EMIOSDIO0DATAOUT' does not match port width (8) of module 'PS8' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:4636]
+WARNING: [Synth 8-689] width (4) of port connection 'EMIOSDIO0DATAENA' does not match port width (8) of module 'PS8' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:4637]
+WARNING: [Synth 8-689] width (4) of port connection 'EMIOSDIO1DATAOUT' does not match port width (8) of module 'PS8' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:4649]
+WARNING: [Synth 8-689] width (4) of port connection 'EMIOSDIO1DATAENA' does not match port width (8) of module 'PS8' [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:4650]
+WARNING: [Synth 8-350] instance 'PS8_i' of module 'PS8' requires 1015 connections, but only 957 given [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:3826]
+WARNING: [Synth 8-3848] Net dp_audio_ref_clk in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:325]
+WARNING: [Synth 8-3848] Net irq_ipi_pl_0 in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:1345]
+WARNING: [Synth 8-3848] Net irq_ipi_pl_1 in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:1346]
+WARNING: [Synth 8-3848] Net irq_ipi_pl_2 in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:1347]
+WARNING: [Synth 8-3848] Net irq_ipi_pl_3 in module/entity zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e does not have driver. [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:1348]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e' (3#1) [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/hdl/zynq_ultra_ps_e_v3_2_2.v:272]
+WARNING: [Synth 8-350] instance 'inst' of module 'zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e' requires 1491 connections, but only 1487 given [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:363]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_zynq_ultra_ps_e_0_0' (4#1) [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:59]
 WARNING: [Synth 8-3331] design zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e has unconnected port dp_audio_ref_clk
 WARNING: [Synth 8-3331] design zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e has unconnected port irq_ipi_pl_0
@@ -179,7 +179,7 @@ WARNING: [Synth 8-3331] design zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e has unconn
 WARNING: [Synth 8-3331] design zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e has unconnected port test_adc2_in[7]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1440.707 ; gain = 123.602 ; free physical = 8162 ; free virtual = 21195
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1440.141 ; gain = 113.598 ; free physical = 3501 ; free virtual = 13805
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -188,18 +188,18 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-INFO: [Synth 8-3295] tying undriven pin inst:emio_enet0_signal_detect to constant 0 [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:359]
-INFO: [Synth 8-3295] tying undriven pin inst:emio_enet1_signal_detect to constant 0 [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:359]
-INFO: [Synth 8-3295] tying undriven pin inst:emio_enet2_signal_detect to constant 0 [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:359]
-INFO: [Synth 8-3295] tying undriven pin inst:emio_enet3_signal_detect to constant 0 [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:359]
+INFO: [Synth 8-3295] tying undriven pin inst:emio_enet0_signal_detect to constant 0 [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:363]
+INFO: [Synth 8-3295] tying undriven pin inst:emio_enet1_signal_detect to constant 0 [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:363]
+INFO: [Synth 8-3295] tying undriven pin inst:emio_enet2_signal_detect to constant 0 [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:363]
+INFO: [Synth 8-3295] tying undriven pin inst:emio_enet3_signal_detect to constant 0 [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/synth/design_1_zynq_ultra_ps_e_0_0.v:363]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1440.707 ; gain = 123.602 ; free physical = 8156 ; free virtual = 21189
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1440.141 ; gain = 113.598 ; free physical = 3457 ; free virtual = 13762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1440.707 ; gain = 123.602 ; free physical = 8156 ; free virtual = 21189
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1440.141 ; gain = 113.598 ; free physical = 3457 ; free virtual = 13762
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xczu3eg-sbva484-1-e
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -214,14 +214,14 @@ Parsing XDC File [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.runs/design_1
 Finished Parsing XDC File [/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.runs/design_1_zynq_ultra_ps_e_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2314.250 ; gain = 0.000 ; free physical = 7193 ; free virtual = 20370
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2314.691 ; gain = 0.000 ; free physical = 2178 ; free virtual = 12485
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2314.250 ; gain = 0.000 ; free physical = 7193 ; free virtual = 20370
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2314.250 ; gain = 0.000 ; free physical = 7192 ; free virtual = 20369
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2314.691 ; gain = 0.000 ; free physical = 2178 ; free virtual = 12485
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2314.691 ; gain = 0.000 ; free physical = 2173 ; free virtual = 12480
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 2314.250 ; gain = 997.145 ; free physical = 7212 ; free virtual = 20390
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 2314.691 ; gain = 988.148 ; free physical = 2187 ; free virtual = 12496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -229,18 +229,18 @@ Start Loading Part and Timing Information
 Loading part: xczu3eg-sbva484-1-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 2314.250 ; gain = 997.145 ; free physical = 7212 ; free virtual = 20390
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 2314.691 ; gain = 988.148 ; free physical = 2187 ; free virtual = 12496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst/PS8_i. (constraint file  /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0.xdc, line 25).
+Applied set_property DONT_TOUCH = true for inst/PS8_i. (constraint file  /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0.xdc, line 26).
 Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.runs/design_1_zynq_ultra_ps_e_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 2314.250 ; gain = 997.145 ; free physical = 7212 ; free virtual = 20390
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 2314.691 ; gain = 988.148 ; free physical = 2185 ; free virtual = 12494
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:35 . Memory (MB): peak = 2314.250 ; gain = 997.145 ; free physical = 7205 ; free virtual = 20383
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:28 . Memory (MB): peak = 2314.691 ; gain = 988.148 ; free physical = 2178 ; free virtual = 12487
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -282,7 +282,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:35 . Memory (MB): peak = 2314.250 ; gain = 997.145 ; free physical = 7177 ; free virtual = 20359
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:28 . Memory (MB): peak = 2314.691 ; gain = 988.148 ; free physical = 2157 ; free virtual = 12469
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -294,13 +294,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:01:28 . Memory (MB): peak = 3695.102 ; gain = 2377.996 ; free physical = 5547 ; free virtual = 18767
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:01:09 . Memory (MB): peak = 3695.543 ; gain = 2369.000 ; free physical = 443 ; free virtual = 10756
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:01:28 . Memory (MB): peak = 3721.109 ; gain = 2404.004 ; free physical = 5520 ; free virtual = 18740
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:01:09 . Memory (MB): peak = 3720.551 ; gain = 2394.008 ; free physical = 379 ; free virtual = 10691
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -312,7 +312,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:01:38 . Memory (MB): peak = 3734.039 ; gain = 2416.934 ; free physical = 5429 ; free virtual = 18647
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:01:17 . Memory (MB): peak = 3733.480 ; gain = 2406.938 ; free physical = 2385 ; free virtual = 12696
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -433,7 +433,7 @@ INFO: [Synth 8-3295] tying undriven pin trace_data_pipe[6]_inferred:in0[9] to co
 INFO: [Synth 8-3295] tying undriven pin trace_data_pipe[6]_inferred:in0[8] to constant 0
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:01:44 . Memory (MB): peak = 3734.039 ; gain = 2416.934 ; free physical = 5327 ; free virtual = 18545
+Finished IO Insertion : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 3733.480 ; gain = 2406.938 ; free physical = 2749 ; free virtual = 13060
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -446,7 +446,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:01:44 . Memory (MB): peak = 3734.039 ; gain = 2416.934 ; free physical = 5328 ; free virtual = 18545
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 3733.480 ; gain = 2406.938 ; free physical = 2749 ; free virtual = 13061
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -458,25 +458,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:48 ; elapsed = 00:01:44 . Memory (MB): peak = 3734.039 ; gain = 2416.934 ; free physical = 5326 ; free virtual = 18544
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 3733.480 ; gain = 2406.938 ; free physical = 2749 ; free virtual = 13061
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:48 ; elapsed = 00:01:44 . Memory (MB): peak = 3734.039 ; gain = 2416.934 ; free physical = 5330 ; free virtual = 18548
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 3733.480 ; gain = 2406.938 ; free physical = 2749 ; free virtual = 13061
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:48 ; elapsed = 00:01:44 . Memory (MB): peak = 3734.039 ; gain = 2416.934 ; free physical = 5330 ; free virtual = 18548
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 3733.480 ; gain = 2406.938 ; free physical = 2749 ; free virtual = 13061
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:01:44 . Memory (MB): peak = 3734.039 ; gain = 2416.934 ; free physical = 5331 ; free virtual = 18548
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 3733.480 ; gain = 2406.938 ; free physical = 2749 ; free virtual = 13061
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -492,7 +492,7 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |BUFG_PS |     1|
+|1     |BUFG_PS |     2|
 |2     |LUT1    |   292|
 |3     |PS8     |     1|
 |4     |FDRE    |     1|
@@ -502,34 +502,36 @@ Report Instance Areas:
 +------+---------+---------------------------------------+------+
 |      |Instance |Module                                 |Cells |
 +------+---------+---------------------------------------+------+
-|1     |top      |                                       |   295|
-|2     |  inst   |zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e |   295|
+|1     |top      |                                       |   296|
+|2     |  inst   |zynq_ultra_ps_e_v3_2_2_zynq_ultra_ps_e |   296|
 +------+---------+---------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:01:44 . Memory (MB): peak = 3734.039 ; gain = 2416.934 ; free physical = 5330 ; free virtual = 18547
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 3733.480 ; gain = 2406.938 ; free physical = 2749 ; free virtual = 13061
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 569 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:01:19 . Memory (MB): peak = 3734.039 ; gain = 1543.391 ; free physical = 5373 ; free virtual = 18591
-Synthesis Optimization Complete : Time (s): cpu = 00:00:48 ; elapsed = 00:01:44 . Memory (MB): peak = 3734.047 ; gain = 2416.934 ; free physical = 5373 ; free virtual = 18591
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:01:02 . Memory (MB): peak = 3733.480 ; gain = 1532.387 ; free physical = 2791 ; free virtual = 13102
+Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:01:22 . Memory (MB): peak = 3733.488 ; gain = 2406.938 ; free physical = 2791 ; free virtual = 13102
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3747.039 ; gain = 0.000 ; free physical = 5283 ; free virtual = 18502
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3747.480 ; gain = 0.000 ; free physical = 2786 ; free virtual = 13097
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 122 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:01:46 . Memory (MB): peak = 3747.039 ; gain = 2430.082 ; free physical = 6378 ; free virtual = 19597
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3747.039 ; gain = 0.000 ; free physical = 6378 ; free virtual = 19597
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:01:23 . Memory (MB): peak = 3747.480 ; gain = 2421.090 ; free physical = 3884 ; free virtual = 14195
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3747.480 ; gain = 0.000 ; free physical = 3884 ; free virtual = 14195
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.runs/design_1_zynq_ultra_ps_e_0_0_synth_1/design_1_zynq_ultra_ps_e_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_zynq_ultra_ps_e_0_0, cache-ID = b1ee33b5e3da7500
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3747.039 ; gain = 0.000 ; free physical = 6308 ; free virtual = 19529
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_zynq_ultra_ps_e_0_0, cache-ID = 99cde605e56b9cfe
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3747.480 ; gain = 0.000 ; free physical = 3741 ; free virtual = 14054
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.runs/design_1_zynq_ultra_ps_e_0_0_synth_1/design_1_zynq_ultra_ps_e_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_zynq_ultra_ps_e_0_0_utilization_synth.rpt -pb design_1_zynq_ultra_ps_e_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jun 24 11:25:11 2020...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 30 14:52:01 2020...

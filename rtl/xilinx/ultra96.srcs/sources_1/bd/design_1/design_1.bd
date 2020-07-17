@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCD795360257C1413",
+      "boundary_crc": "0x85BEEC03765AD6F3",
       "device": "xczu3eg-sbva484-1-e",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -10,10 +10,9 @@
     },
     "design_tree": {
       "zynq_ultra_ps_e_0": "",
+      "proc_sys_reset_0": "",
       "ila_0": "",
-      "xlconstant_0": "",
-      "xlconstant_1": "",
-      "spi_master_0": ""
+      "lepton_if_0": ""
     },
     "ports": {
       "spi_cs_0": {
@@ -23,6 +22,9 @@
         "type": "clk",
         "direction": "O",
         "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst"
+          },
           "CLK_DOMAIN": {
             "value": "design_1_spi_master_0_0_spi_clk",
             "value_src": "default_prop"
@@ -43,6 +45,19 @@
       },
       "spi_miso_0": {
         "direction": "I"
+      },
+      "rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
       }
     },
     "components": {
@@ -498,22 +513,28 @@
             "value": "100.000000"
           },
           "PSU__CRL_APB__PL0_REF_CTRL__DIVISOR0": {
-            "value": "15"
+            "value": "5"
           },
           "PSU__CRL_APB__PL0_REF_CTRL__DIVISOR1": {
-            "value": "1"
+            "value": "3"
           },
           "PSU__CRL_APB__PL0_REF_CTRL__SRCSEL": {
             "value": "IOPLL"
           },
           "PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ": {
-            "value": "24.999975"
+            "value": "20.000000"
           },
           "PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0": {
-            "value": "15"
+            "value": "25"
           },
           "PSU__CRL_APB__PL1_REF_CTRL__DIVISOR1": {
-            "value": "4"
+            "value": "3"
+          },
+          "PSU__CRL_APB__PL1_REF_CTRL__FREQMHZ": {
+            "value": "100"
+          },
+          "PSU__CRL_APB__PL1_REF_CTRL__SRCSEL": {
+            "value": "IOPLL"
           },
           "PSU__CRL_APB__PL2_REF_CTRL__ACT_FREQMHZ": {
             "value": "299.999700"
@@ -915,7 +936,7 @@
             "value": "1"
           },
           "PSU__FPGA_PL1_ENABLE": {
-            "value": "0"
+            "value": "1"
           },
           "PSU__FPGA_PL2_ENABLE": {
             "value": "0"
@@ -999,6 +1020,9 @@
             "value": "1"
           },
           "PSU__PL_CLK0_BUF": {
+            "value": "TRUE"
+          },
+          "PSU__PL_CLK1_BUF": {
             "value": "TRUE"
           },
           "PSU__PMU_COHERENCY": {
@@ -1324,6 +1348,10 @@
           }
         }
       },
+      "proc_sys_reset_0": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "design_1_proc_sys_reset_0_0"
+      },
       "ila_0": {
         "vlnv": "xilinx.com:ip:ila:6.2",
         "xci_name": "design_1_ila_0_0",
@@ -1331,11 +1359,8 @@
           "ALL_PROBE_SAME_MU_CNT": {
             "value": "2"
           },
-          "C_ADV_TRIGGER": {
-            "value": "true"
-          },
           "C_DATA_DEPTH": {
-            "value": "16384"
+            "value": "65536"
           },
           "C_ENABLE_ILA_AXI_MON": {
             "value": "false"
@@ -1347,251 +1372,156 @@
             "value": "Native"
           },
           "C_NUM_OF_PROBES": {
-            "value": "12"
+            "value": "14"
           },
           "C_PROBE0_MU_CNT": {
             "value": "2"
           },
-          "C_PROBE0_TYPE": {
-            "value": "1"
-          },
-          "C_PROBE0_WIDTH": {
-            "value": "32"
-          },
           "C_PROBE10_MU_CNT": {
             "value": "2"
           },
-          "C_PROBE10_TYPE": {
-            "value": "1"
-          },
           "C_PROBE10_WIDTH": {
-            "value": "5"
+            "value": "16"
           },
           "C_PROBE11_MU_CNT": {
             "value": "2"
           },
-          "C_PROBE11_TYPE": {
-            "value": "1"
+          "C_PROBE11_WIDTH": {
+            "value": "4"
+          },
+          "C_PROBE12_MU_CNT": {
+            "value": "2"
+          },
+          "C_PROBE12_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE13_MU_CNT": {
+            "value": "2"
+          },
+          "C_PROBE13_WIDTH": {
+            "value": "32"
           },
           "C_PROBE1_MU_CNT": {
             "value": "2"
           },
-          "C_PROBE1_TYPE": {
-            "value": "1"
-          },
           "C_PROBE2_MU_CNT": {
             "value": "2"
-          },
-          "C_PROBE2_TYPE": {
-            "value": "1"
           },
           "C_PROBE3_MU_CNT": {
             "value": "2"
           },
-          "C_PROBE3_TYPE": {
-            "value": "1"
-          },
           "C_PROBE4_MU_CNT": {
             "value": "2"
-          },
-          "C_PROBE4_TYPE": {
-            "value": "1"
           },
           "C_PROBE5_MU_CNT": {
             "value": "2"
           },
-          "C_PROBE5_TYPE": {
-            "value": "1"
-          },
           "C_PROBE6_MU_CNT": {
             "value": "2"
           },
-          "C_PROBE6_TYPE": {
-            "value": "1"
-          },
           "C_PROBE7_MU_CNT": {
-            "value": "2"
-          },
-          "C_PROBE7_TYPE": {
             "value": "2"
           },
           "C_PROBE8_MU_CNT": {
             "value": "2"
           },
-          "C_PROBE8_TYPE": {
-            "value": "1"
-          },
           "C_PROBE8_WIDTH": {
-            "value": "9"
+            "value": "8"
           },
           "C_PROBE9_MU_CNT": {
             "value": "2"
           },
-          "C_PROBE9_TYPE": {
-            "value": "1"
-          },
           "C_PROBE9_WIDTH": {
-            "value": "16"
-          },
-          "C_TRIGIN_EN": {
-            "value": "false"
+            "value": "4"
           }
         }
       },
-      "xlconstant_0": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "design_1_xlconstant_0_0"
-      },
-      "xlconstant_1": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "design_1_xlconstant_0_1",
-        "parameters": {
-          "CONST_VAL": {
-            "value": "0"
-          }
-        }
-      },
-      "spi_master_0": {
-        "vlnv": "xilinx.com:module_ref:spi_master:1.0",
-        "xci_name": "design_1_spi_master_0_0",
+      "lepton_if_0": {
+        "vlnv": "xilinx.com:module_ref:lepton_if:1.0",
+        "xci_name": "design_1_lepton_if_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "spi_master",
+          "ref_name": "lepton_if",
           "boundary_crc": "0x0"
-        },
-        "interface_ports": {
-          "axi_m": {
-            "mode": "Master",
-            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "HAS_TKEEP": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TLAST": {
-                "value": "1",
-                "value_src": "constant"
-              },
-              "HAS_TREADY": {
-                "value": "1",
-                "value_src": "constant"
-              },
-              "HAS_TSTRB": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "TDATA_NUM_BYTES": {
-                "value": "4",
-                "value_src": "auto"
-              },
-              "TDEST_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "TID_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "TUSER_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              }
-            },
-            "port_maps": {
-              "TDATA": {
-                "physical_name": "axi_m_tdata",
-                "direction": "O",
-                "left": "31",
-                "right": "0"
-              },
-              "TLAST": {
-                "physical_name": "axi_m_tlast",
-                "direction": "O"
-              },
-              "TVALID": {
-                "physical_name": "axi_m_tvalid",
-                "direction": "O"
-              },
-              "TREADY": {
-                "physical_name": "axi_m_tready",
-                "direction": "I"
-              }
-            }
-          }
         },
         "ports": {
           "clk": {
             "type": "clk",
             "direction": "I",
             "parameters": {
-              "ASSOCIATED_BUSIF": {
-                "value": "axi_m",
+              "ASSOCIATED_RESET": {
+                "value": "reset",
                 "value_src": "constant"
               },
               "CLK_DOMAIN": {
-                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk0",
+                "value": "design_1_zynq_ultra_ps_e_0_0_pl_clk1",
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "100000000",
+                "value": "20000000",
                 "value_src": "user_prop"
               }
             }
           },
-          "debug_clk": {
-            "type": "clk",
-            "direction": "O"
-          },
-          "rst_n": {
+          "reset": {
             "type": "rst",
             "direction": "I",
             "parameters": {
               "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
               }
             }
           },
-          "spi_clk": {
-            "type": "clk",
+          "sclk": {
             "direction": "O"
           },
-          "en": {
+          "miso": {
             "direction": "I"
           },
-          "error": {
+          "ss": {
             "direction": "O"
           },
-          "spi_miso": {
-            "direction": "I"
-          },
-          "spi_cs": {
-            "direction": "O"
-          },
-          "spi_byte_counter_wire": {
+          "line_out": {
             "direction": "O",
-            "left": "8",
+            "left": "7",
             "right": "0"
           },
-          "discard": {
-            "direction": "O"
+          "seg_out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
           },
-          "spi_crc_bytes": {
+          "shift_reg_out": {
             "direction": "O",
             "left": "15",
             "right": "0"
           },
-          "spi_bit_counter_wire": {
+          "shift_count_out": {
             "direction": "O",
-            "left": "4",
+            "left": "31",
+            "right": "0"
+          },
+          "valid_out": {
+            "direction": "O"
+          },
+          "line_val": {
+            "direction": "O"
+          },
+          "rstb": {
+            "direction": "O"
+          },
+          "enb": {
+            "direction": "O"
+          },
+          "web": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "addrb": {
+            "direction": "O",
+            "left": "31",
             "right": "0"
           }
         }
@@ -1603,20 +1533,20 @@
           "zynq_ultra_ps_e_0/pl_clk0",
           "zynq_ultra_ps_e_0/maxihpm0_fpd_aclk",
           "zynq_ultra_ps_e_0/maxihpm1_fpd_aclk",
-          "ila_0/clk",
-          "spi_master_0/clk"
+          "proc_sys_reset_0/slowest_sync_clk",
+          "ila_0/clk"
         ]
       },
       "spi_master_0_spi_cs": {
         "ports": [
-          "spi_master_0/spi_cs",
+          "lepton_if_0/ss",
           "spi_cs_0",
-          "ila_0/probe6"
+          "ila_0/probe5"
         ]
       },
       "spi_master_0_spi_clk": {
         "ports": [
-          "spi_master_0/spi_clk",
+          "lepton_if_0/sclk",
           "spi_clk_0",
           "ila_0/probe4"
         ]
@@ -1624,75 +1554,82 @@
       "spi_miso_0_1": {
         "ports": [
           "spi_miso_0",
-          "ila_0/probe5",
-          "spi_master_0/spi_miso"
+          "ila_0/probe6",
+          "lepton_if_0/miso"
         ]
       },
-      "spi_master_0_axi_m_tdata": {
+      "rst_1": {
         "ports": [
-          "spi_master_0/axi_m_tdata",
+          "rst",
+          "proc_sys_reset_0/ext_reset_in",
+          "ila_0/probe7",
+          "lepton_if_0/reset"
+        ]
+      },
+      "zynq_ultra_ps_e_0_pl_clk1": {
+        "ports": [
+          "zynq_ultra_ps_e_0/pl_clk1",
+          "lepton_if_0/clk"
+        ]
+      },
+      "lepton_if_0_valid_out": {
+        "ports": [
+          "lepton_if_0/valid_out",
           "ila_0/probe0"
         ]
       },
-      "spi_master_0_axi_m_tlast": {
+      "lepton_if_0_line_val": {
         "ports": [
-          "spi_master_0/axi_m_tlast",
+          "lepton_if_0/line_val",
           "ila_0/probe1"
         ]
       },
-      "spi_master_0_axi_m_tvalid": {
+      "lepton_if_0_rstb": {
         "ports": [
-          "spi_master_0/axi_m_tvalid",
+          "lepton_if_0/rstb",
           "ila_0/probe2"
         ]
       },
-      "spi_master_0_error": {
+      "lepton_if_0_enb": {
         "ports": [
-          "spi_master_0/error",
+          "lepton_if_0/enb",
           "ila_0/probe3"
         ]
       },
-      "xlconstant_0_dout": {
+      "lepton_if_0_line_out": {
         "ports": [
-          "xlconstant_0/dout",
-          "spi_master_0/en",
-          "spi_master_0/axi_m_tready"
-        ]
-      },
-      "xlconstant_1_dout": {
-        "ports": [
-          "xlconstant_1/dout",
-          "spi_master_0/rst_n"
-        ]
-      },
-      "spi_master_0_debug_clk": {
-        "ports": [
-          "spi_master_0/debug_clk",
-          "ila_0/probe7"
-        ]
-      },
-      "spi_master_0_spi_byte_counter_wire": {
-        "ports": [
-          "spi_master_0/spi_byte_counter_wire",
+          "lepton_if_0/line_out",
           "ila_0/probe8"
         ]
       },
-      "spi_master_0_spi_crc_bytes": {
+      "lepton_if_0_seg_out": {
         "ports": [
-          "spi_master_0/spi_crc_bytes",
+          "lepton_if_0/seg_out",
           "ila_0/probe9"
         ]
       },
-      "spi_master_0_spi_bit_counter_wire": {
+      "lepton_if_0_shift_reg_out": {
         "ports": [
-          "spi_master_0/spi_bit_counter_wire",
+          "lepton_if_0/shift_reg_out",
           "ila_0/probe10"
         ]
       },
-      "spi_master_0_discard": {
+      "lepton_if_0_web": {
         "ports": [
-          "spi_master_0/discard",
+          "lepton_if_0/web",
           "ila_0/probe11"
+        ]
+      },
+      "lepton_if_0_addrb": {
+        "ports": [
+          "lepton_if_0/addrb",
+          "ila_0/probe12"
+        ]
+      },
+      "lepton_if_0_shift_count_out": {
+        "ports": [
+          "lepton_if_0/shift_count_out",
+          "ila_0/probe13"
         ]
       }
     },

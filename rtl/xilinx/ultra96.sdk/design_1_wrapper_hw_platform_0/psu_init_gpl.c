@@ -1350,10 +1350,10 @@ unsigned long psu_clock_init_data(void)
     *  PSU_CRL_APB_PL0_REF_CTRL_CLKACT                             0x1
 
     * 6 bit divider
-    *  PSU_CRL_APB_PL0_REF_CTRL_DIVISOR1                           0x1
+    *  PSU_CRL_APB_PL0_REF_CTRL_DIVISOR1                           0x3
 
     * 6 bit divider
-    *  PSU_CRL_APB_PL0_REF_CTRL_DIVISOR0                           0xf
+    *  PSU_CRL_APB_PL0_REF_CTRL_DIVISOR0                           0x5
 
     * 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
     * ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
@@ -1361,10 +1361,34 @@ unsigned long psu_clock_init_data(void)
     *  PSU_CRL_APB_PL0_REF_CTRL_SRCSEL                             0x0
 
     * This register controls this reference clock
-    * (OFFSET, MASK, VALUE)      (0XFF5E00C0, 0x013F3F07U ,0x01010F00U)
+    * (OFFSET, MASK, VALUE)      (0XFF5E00C0, 0x013F3F07U ,0x01030500U)
     */
 	PSU_Mask_Write(CRL_APB_PL0_REF_CTRL_OFFSET,
-		0x013F3F07U, 0x01010F00U);
+		0x013F3F07U, 0x01030500U);
+/*##################################################################### */
+
+    /*
+    * Register : PL1_REF_CTRL @ 0XFF5E00C4
+
+    * Clock active signal. Switch to 0 to disable the clock
+    *  PSU_CRL_APB_PL1_REF_CTRL_CLKACT                             0x1
+
+    * 6 bit divider
+    *  PSU_CRL_APB_PL1_REF_CTRL_DIVISOR1                           0x3
+
+    * 6 bit divider
+    *  PSU_CRL_APB_PL1_REF_CTRL_DIVISOR0                           0x19
+
+    * 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
+    * ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
+    *  usually an issue, but designers must be aware.)
+    *  PSU_CRL_APB_PL1_REF_CTRL_SRCSEL                             0x0
+
+    * This register controls this reference clock
+    * (OFFSET, MASK, VALUE)      (0XFF5E00C4, 0x013F3F07U ,0x01031900U)
+    */
+	PSU_Mask_Write(CRL_APB_PL1_REF_CTRL_OFFSET,
+		0x013F3F07U, 0x01031900U);
 /*##################################################################### */
 
     /*

@@ -82,9 +82,9 @@ set_property PACKAGE_PIN F7   [get_ports {HD_GPIO_2               }];  # "F7.HD_
 set_property src_info {type:XDC file:1 line:109 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G7   [get_ports {HD_GPIO_3               }];  # "G7.HD_GPIO_3"
 set_property src_info {type:XDC file:1 line:110 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN F6   [get_ports {HD_GPIO_4               }];  # "F6.HD_GPIO_4"
+set_property -dict {PACKAGE_PIN F6 IOSTANDARD LVCMOS33 } [get_ports {rst               }];  # "F6.HD_GPIO_4"
 set_property src_info {type:XDC file:1 line:111 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN G5   [get_ports {spi_clk_0               }];  # "G5.HD_GPIO_5"
+set_property -dict {PACKAGE_PIN G5 IOSTANDARD LVCMOS33 } [get_ports {spi_clk_0               }];  # "G5.HD_GPIO_5"
 set_property src_info {type:XDC file:1 line:112 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN A6   [get_ports {HD_GPIO_6               }];  # "A6.HD_GPIO_6"
 set_property src_info {type:XDC file:1 line:113 export:INPUT save:INPUT read:READ} [current_design]
@@ -92,11 +92,11 @@ set_property PACKAGE_PIN A7   [get_ports {HD_GPIO_7               }];  # "A7.HD_
 set_property src_info {type:XDC file:1 line:114 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G6   [get_ports {HD_GPIO_8               }];  # "G6.HD_GPIO_8"
 set_property src_info {type:XDC file:1 line:115 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN E6   [get_ports {spi_miso_0               }];  # "E6.HD_GPIO_9"
+set_property -dict {PACKAGE_PIN E6 IOSTANDARD LVCMOS33 } [get_ports {spi_miso_0               }];  # "E6.HD_GPIO_9"
 set_property src_info {type:XDC file:1 line:116 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN E5   [get_ports {HD_GPIO_10              }];  # "E5.HD_GPIO_10"
 set_property src_info {type:XDC file:1 line:117 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN D6   [get_ports {spi_cs_0              }];  # "D6.HD_GPIO_11"
+set_property -dict {PACKAGE_PIN D6 IOSTANDARD LVCMOS33 } [get_ports {spi_cs_0              }];  # "D6.HD_GPIO_11"
 set_property src_info {type:XDC file:1 line:118 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN D5   [get_ports {HD_GPIO_12              }];  # "D5.HD_GPIO_12"
 set_property src_info {type:XDC file:1 line:119 export:INPUT save:INPUT read:READ} [current_design]
@@ -105,9 +105,9 @@ set_property src_info {type:XDC file:1 line:120 export:INPUT save:INPUT read:REA
 set_property PACKAGE_PIN B6   [get_ports {HD_GPIO_14              }];  # "B6.HD_GPIO_14"
 set_property src_info {type:XDC file:1 line:121 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN C5   [get_ports {HD_GPIO_15              }];  # "C5.HD_GPIO_15"
-set_property src_info {type:XDC file:1 line:137 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:1 line:142 export:INPUT save:INPUT read:READ} [current_design]
 set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 26]];
-set_property src_info {type:XDC file:1 line:140 export:INPUT save:INPUT read:READ} [current_design]
-set_property IOSTANDARD LVCMOS12 [get_ports -of_objects [get_iobanks 65]];
-set_property src_info {type:XDC file:1 line:143 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:1 line:146 export:INPUT save:INPUT read:READ} [current_design]
+set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 65]];
+set_property src_info {type:XDC file:1 line:150 export:INPUT save:INPUT read:READ} [current_design]
 set_property IOSTANDARD LVCMOS12 [get_ports -of_objects [get_iobanks 66]];

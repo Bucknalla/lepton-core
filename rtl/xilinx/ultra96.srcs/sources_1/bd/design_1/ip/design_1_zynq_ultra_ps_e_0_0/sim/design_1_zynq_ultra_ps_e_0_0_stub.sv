@@ -141,7 +141,8 @@ module design_1_zynq_ultra_ps_e_0_0 (
   output bit [3 : 0] maxigp1_arqos,
   input bit [0 : 0] pl_ps_irq0,
   output bit_as_bool pl_resetn0,
-  output bit_as_bool pl_clk0
+  output bit_as_bool pl_clk0,
+  output bit_as_bool pl_clk1
 );
 endmodule
 `endif

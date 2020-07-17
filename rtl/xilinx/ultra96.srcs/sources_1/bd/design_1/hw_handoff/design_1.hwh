@@ -1,23 +1,30 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jun 25 15:37:29 2020" VIVADOVERSION="2018.3">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jun 30 16:18:57 2020" VIVADOVERSION="2018.3">
 
   <SYSTEMINFO ARCH="zynquplus" BOARD="em.avnet.com:ultra96v1:part0:1.2" DEVICE="xczu3eg" NAME="design_1" PACKAGE="sbva484" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="O" NAME="spi_cs_0" SIGIS="undef" SIGNAME="spi_master_0_spi_cs">
+    <PORT DIR="O" NAME="spi_cs_0" SIGIS="undef" SIGNAME="lepton_if_0_ss">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="spi_master_0" PORT="spi_cs"/>
+        <CONNECTION INSTANCE="lepton_if_0" PORT="ss"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="spi_clk_0" SIGIS="clk" SIGNAME="spi_master_0_spi_clk">
+    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="spi_clk_0" SIGIS="clk" SIGNAME="lepton_if_0_sclk">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="spi_master_0" PORT="spi_clk"/>
+        <CONNECTION INSTANCE="lepton_if_0" PORT="sclk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="spi_miso_0" SIGIS="undef" SIGNAME="External_Ports_spi_miso_0">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="ila_0" PORT="probe5"/>
-        <CONNECTION INSTANCE="spi_master_0" PORT="spi_miso"/>
+        <CONNECTION INSTANCE="ila_0" PORT="probe6"/>
+        <CONNECTION INSTANCE="lepton_if_0" PORT="miso"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="rst" SIGIS="rst" SIGNAME="External_Ports_rst">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="proc_sys_reset_0" PORT="ext_reset_in"/>
+        <CONNECTION INSTANCE="ila_0" PORT="probe7"/>
+        <CONNECTION INSTANCE="lepton_if_0" PORT="reset"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -45,8 +52,8 @@
         <PARAMETER NAME="C_SLOT_0_AXI_PROTOCOL" VALUE="AXI4"/>
         <PARAMETER NAME="C_NUM_MONITOR_SLOTS" VALUE="1"/>
         <PARAMETER NAME="C_ENABLE_ILA_AXI_MON" VALUE="0"/>
-        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="12"/>
-        <PARAMETER NAME="C_DATA_DEPTH" VALUE="16384"/>
+        <PARAMETER NAME="C_NUM_OF_PROBES" VALUE="14"/>
+        <PARAMETER NAME="C_DATA_DEPTH" VALUE="65536"/>
         <PARAMETER NAME="C_MAJOR_VERSION" VALUE="2018"/>
         <PARAMETER NAME="C_MINOR_VERSION" VALUE="3"/>
         <PARAMETER NAME="C_BUILD_REVISION" VALUE="0"/>
@@ -62,14 +69,14 @@
         <PARAMETER NAME="C_TRIGIN_EN" VALUE="0"/>
         <PARAMETER NAME="C_SLOT_0_AXIS_TUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXIS_TDEST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_SLOT_0_AXIS_TID_WIDTH" VALUE="9"/>
+        <PARAMETER NAME="C_SLOT_0_AXIS_TID_WIDTH" VALUE="8"/>
         <PARAMETER NAME="C_SLOT_0_AXI_ID_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_ARUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_RUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_AWUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_WUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_BUSER_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE1_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE2_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE3_WIDTH" VALUE="1"/>
@@ -77,12 +84,12 @@
         <PARAMETER NAME="C_PROBE5_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE6_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE7_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE8_WIDTH" VALUE="9"/>
-        <PARAMETER NAME="C_PROBE9_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="C_PROBE10_WIDTH" VALUE="5"/>
-        <PARAMETER NAME="C_PROBE11_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE12_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE13_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_PROBE8_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="C_PROBE9_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_PROBE10_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="C_PROBE11_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_PROBE12_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_PROBE13_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_PROBE14_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE15_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE16_WIDTH" VALUE="1"/>
@@ -1093,18 +1100,18 @@
         <PARAMETER NAME="C_PROBE1021_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE1022_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE1023_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE0_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE1_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE2_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE3_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE4_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE5_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE6_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE7_TYPE" VALUE="2"/>
-        <PARAMETER NAME="C_PROBE8_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE9_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE10_TYPE" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE11_TYPE" VALUE="1"/>
+        <PARAMETER NAME="C_PROBE0_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE1_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE2_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE3_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE4_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE5_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE6_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE7_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE8_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE9_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE10_TYPE" VALUE="0"/>
+        <PARAMETER NAME="C_PROBE11_TYPE" VALUE="0"/>
         <PARAMETER NAME="C_PROBE12_TYPE" VALUE="0"/>
         <PARAMETER NAME="C_PROBE13_TYPE" VALUE="0"/>
         <PARAMETER NAME="C_PROBE14_TYPE" VALUE="0"/>
@@ -2129,38 +2136,38 @@
         <PARAMETER NAME="C_PROBE9_MU_CNT" VALUE="2"/>
         <PARAMETER NAME="C_PROBE10_MU_CNT" VALUE="2"/>
         <PARAMETER NAME="C_PROBE11_MU_CNT" VALUE="2"/>
-        <PARAMETER NAME="C_PROBE12_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE13_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE14_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE15_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE16_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE17_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE18_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE19_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE20_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE21_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE22_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE23_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE24_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE25_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE26_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE27_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE28_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE29_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE30_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE31_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE32_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE33_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE34_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE35_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE36_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE37_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE38_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE39_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE40_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE41_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE42_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_PROBE43_MU_CNT" VALUE="1"/>
+        <PARAMETER NAME="C_PROBE12_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE13_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE14_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE15_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE16_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE17_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE18_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE19_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE20_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE21_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE22_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE23_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE24_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE25_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE26_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE27_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE28_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE29_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE30_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE31_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE32_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE33_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE34_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE35_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE36_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE37_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE38_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE39_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE40_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE41_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE42_MU_CNT" VALUE="2"/>
+        <PARAMETER NAME="C_PROBE43_MU_CNT" VALUE="2"/>
         <PARAMETER NAME="C_PROBE44_MU_CNT" VALUE="1"/>
         <PARAMETER NAME="C_PROBE45_MU_CNT" VALUE="1"/>
         <PARAMETER NAME="C_PROBE46_MU_CNT" VALUE="1"/>
@@ -3141,7 +3148,7 @@
         <PARAMETER NAME="C_PROBE1021_MU_CNT" VALUE="1"/>
         <PARAMETER NAME="C_PROBE1022_MU_CNT" VALUE="1"/>
         <PARAMETER NAME="C_PROBE1023_MU_CNT" VALUE="1"/>
-        <PARAMETER NAME="C_ADV_TRIGGER" VALUE="1"/>
+        <PARAMETER NAME="C_ADV_TRIGGER" VALUE="0"/>
         <PARAMETER NAME="C_EN_DDR_ILA" VALUE="0"/>
         <PARAMETER NAME="C_DDR_CLK_GEN" VALUE="0"/>
         <PARAMETER NAME="C_CLK_FREQ" VALUE="200"/>
@@ -3170,218 +3177,206 @@
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_axi_m_tdata">
+        <PORT DIR="I" LEFT="0" NAME="probe0" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_valid_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="axi_m_tdata"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="valid_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_axi_m_tlast">
+        <PORT DIR="I" LEFT="0" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_line_val">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="axi_m_tlast"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="line_val"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe2" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_axi_m_tvalid">
+        <PORT DIR="I" LEFT="0" NAME="probe2" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_rstb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="axi_m_tvalid"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="rstb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe3" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_error">
+        <PORT DIR="I" LEFT="0" NAME="probe3" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_enb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="error"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="enb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe4" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_spi_clk">
+        <PORT DIR="I" LEFT="0" NAME="probe4" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_sclk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="spi_clk"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="sclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe5" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_spi_miso_0">
+        <PORT DIR="I" LEFT="0" NAME="probe5" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_ss">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="ss"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="probe6" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_spi_miso_0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_miso_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe6" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_spi_cs">
+        <PORT DIR="I" LEFT="0" NAME="probe7" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_rst">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="spi_cs"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe7" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_debug_clk">
+        <PORT DIR="I" LEFT="7" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_line_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="debug_clk"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="line_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="8" NAME="probe8" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_spi_byte_counter_wire">
+        <PORT DIR="I" LEFT="3" NAME="probe9" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_seg_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="spi_byte_counter_wire"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="seg_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="probe9" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_spi_crc_bytes">
+        <PORT DIR="I" LEFT="15" NAME="probe10" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_shift_reg_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="spi_crc_bytes"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="shift_reg_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="4" NAME="probe10" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_spi_bit_counter_wire">
+        <PORT DIR="I" LEFT="3" NAME="probe11" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_web">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="spi_bit_counter_wire"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="web"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe11" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_discard">
+        <PORT DIR="I" LEFT="31" NAME="probe12" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_addrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="discard"/>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="addrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="probe13" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_shift_count_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="shift_count_out"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/spi_master_0" HWVERSION="1.0" INSTANCE="spi_master_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="spi_master" VLNV="xilinx.com:module_ref:spi_master:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/lepton_if_0" HWVERSION="1.0" INSTANCE="lepton_if_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="lepton_if" VLNV="xilinx.com:module_ref:lepton_if:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="AXI_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="SPI_DATA_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="PRESCALER" VALUE="10"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_spi_master_0_0"/>
+        <PARAMETER NAME="lines" VALUE="120"/>
+        <PARAMETER NAME="pixels" VALUE="160"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_lepton_if_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
+        <PORT CLKFREQUENCY="20000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
+            <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="debug_clk" SIGIS="clk" SIGNAME="spi_master_0_debug_clk">
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_rst">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ila_0" PORT="probe7"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="rst_n" SIGIS="rst" SIGNAME="xlconstant_1_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="en" SIGIS="undef" SIGNAME="xlconstant_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="error" SIGIS="undef" SIGNAME="spi_master_0_error">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ila_0" PORT="probe3"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="spi_miso" SIGIS="undef" SIGNAME="External_Ports_spi_miso_0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="spi_miso_0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="spi_clk" SIGIS="clk" SIGNAME="spi_master_0_spi_clk">
+        <PORT DIR="O" NAME="sclk" SIGIS="undef" SIGNAME="lepton_if_0_sclk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="spi_clk_0"/>
             <CONNECTION INSTANCE="ila_0" PORT="probe4"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="spi_cs" SIGIS="undef" SIGNAME="spi_master_0_spi_cs">
+        <PORT DIR="I" NAME="miso" SIGIS="undef" SIGNAME="External_Ports_spi_miso_0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="spi_cs_0"/>
-            <CONNECTION INSTANCE="ila_0" PORT="probe6"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="spi_miso_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="8" NAME="spi_byte_counter_wire" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_spi_byte_counter_wire">
+        <PORT DIR="O" NAME="ss" SIGIS="undef" SIGNAME="lepton_if_0_ss">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="spi_cs_0"/>
+            <CONNECTION INSTANCE="ila_0" PORT="probe5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="line_out" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_line_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ila_0" PORT="probe8"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="discard" SIGIS="undef" SIGNAME="spi_master_0_discard">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ila_0" PORT="probe11"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="15" NAME="spi_crc_bytes" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_spi_crc_bytes">
+        <PORT DIR="O" LEFT="3" NAME="seg_out" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_seg_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ila_0" PORT="probe9"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="4" NAME="spi_bit_counter_wire" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_spi_bit_counter_wire">
+        <PORT DIR="O" LEFT="15" NAME="shift_reg_out" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_shift_reg_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ila_0" PORT="probe10"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="axi_m_tlast" SIGIS="undef" SIGNAME="spi_master_0_axi_m_tlast">
+        <PORT DIR="O" LEFT="31" NAME="shift_count_out" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_shift_count_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ila_0" PORT="probe1"/>
+            <CONNECTION INSTANCE="ila_0" PORT="probe13"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="axi_m_tready" SIGIS="undef" SIGNAME="xlconstant_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="axi_m_tvalid" SIGIS="undef" SIGNAME="spi_master_0_axi_m_tvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="ila_0" PORT="probe2"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="axi_m_tdata" RIGHT="0" SIGIS="undef" SIGNAME="spi_master_0_axi_m_tdata">
+        <PORT DIR="O" NAME="valid_out" SIGIS="undef" SIGNAME="lepton_if_0_valid_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ila_0" PORT="probe0"/>
           </CONNECTIONS>
         </PORT>
-      </PORTS>
-      <BUSINTERFACES>
-        <BUSINTERFACE BUSNAME="__NOC__" NAME="axi_m" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
-          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
-          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
-          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
-          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
-          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
-          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="100000000"/>
-          <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="design_1_zynq_ultra_ps_e_0_0_pl_clk0"/>
-          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
-          <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
-          <PORTMAPS>
-            <PORTMAP LOGICAL="TDATA" PHYSICAL="axi_m_tdata"/>
-            <PORTMAP LOGICAL="TLAST" PHYSICAL="axi_m_tlast"/>
-            <PORTMAP LOGICAL="TVALID" PHYSICAL="axi_m_tvalid"/>
-            <PORTMAP LOGICAL="TREADY" PHYSICAL="axi_m_tready"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-      </BUSINTERFACES>
-    </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+        <PORT DIR="O" NAME="line_val" SIGIS="undef" SIGNAME="lepton_if_0_line_val">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="en"/>
-            <CONNECTION INSTANCE="spi_master_0" PORT="axi_m_tready"/>
+            <CONNECTION INSTANCE="ila_0" PORT="probe1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="rstb" SIGIS="undef" SIGNAME="lepton_if_0_rstb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="enb" SIGIS="undef" SIGNAME="lepton_if_0_enb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="web" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_web">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe11"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="addrb" RIGHT="0" SIGIS="undef" SIGNAME="lepton_if_0_addrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ila_0" PORT="probe12"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/xlconstant_1" HWVERSION="1.1" INSTANCE="xlconstant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
-      <DOCUMENTS/>
+    <MODULE COREREVISION="13" FULLNAME="/proc_sys_reset_0" HWVERSION="5.0" INSTANCE="proc_sys_reset_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v5_0;d=pg164-proc-sys-reset.pdf"/>
+      </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x0"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_0_1"/>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynquplus"/>
+        <PARAMETER NAME="C_EXT_RST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_AUX_RST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_EXT_RESET_HIGH" VALUE="1"/>
+        <PARAMETER NAME="C_AUX_RESET_HIGH" VALUE="0"/>
+        <PARAMETER NAME="C_NUM_BUS_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_INTERCONNECT_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_proc_sys_reset_0_0"/>
+        <PARAMETER NAME="USE_BOARD_FLOW" VALUE="false"/>
+        <PARAMETER NAME="RESET_BOARD_INTERFACE" VALUE="Custom"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="spi_master_0" PORT="rst_n"/>
+            <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="pl_clk0"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="ext_reset_in" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aux_reset_in" SIGIS="rst"/>
+        <PORT DIR="I" NAME="mb_debug_sys_rst" SIGIS="rst"/>
+        <PORT DIR="I" NAME="dcm_locked" SIGIS="undef"/>
+        <PORT DIR="O" NAME="mb_reset" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="bus_struct_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
@@ -3414,7 +3409,7 @@
         <PARAMETER NAME="C_EN_FIFO_ENET2" VALUE="0"/>
         <PARAMETER NAME="C_EN_FIFO_ENET3" VALUE="0"/>
         <PARAMETER NAME="C_PL_CLK0_BUF" VALUE="TRUE"/>
-        <PARAMETER NAME="C_PL_CLK1_BUF" VALUE="FALSE"/>
+        <PARAMETER NAME="C_PL_CLK1_BUF" VALUE="TRUE"/>
         <PARAMETER NAME="C_PL_CLK2_BUF" VALUE="FALSE"/>
         <PARAMETER NAME="C_PL_CLK3_BUF" VALUE="FALSE"/>
         <PARAMETER NAME="C_TRACE_PIPELINE_WIDTH" VALUE="8"/>
@@ -3465,7 +3460,7 @@
         <PARAMETER NAME="PSU__ENET1__PERIPHERAL__IO" VALUE="&lt;Select>"/>
         <PARAMETER NAME="PSU__ENET1__GRP_MDIO__ENABLE" VALUE="0"/>
         <PARAMETER NAME="PSU__FPGA_PL0_ENABLE" VALUE="1"/>
-        <PARAMETER NAME="PSU__FPGA_PL1_ENABLE" VALUE="0"/>
+        <PARAMETER NAME="PSU__FPGA_PL1_ENABLE" VALUE="1"/>
         <PARAMETER NAME="PSU__FPGA_PL2_ENABLE" VALUE="0"/>
         <PARAMETER NAME="PSU__FPGA_PL3_ENABLE" VALUE="0"/>
         <PARAMETER NAME="PSU__ENET1__GRP_MDIO__IO" VALUE="&lt;Select>"/>
@@ -4478,12 +4473,12 @@
         <PARAMETER NAME="PSU__SATA__LANE1__ENABLE" VALUE="0"/>
         <PARAMETER NAME="PSU__SATA__LANE1__IO" VALUE="&lt;Select>"/>
         <PARAMETER NAME="PSU__CRF_APB__PCIE_REF_CTRL__DIVISOR0" VALUE="2"/>
-        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__DIVISOR0" VALUE="15"/>
-        <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0" VALUE="15"/>
+        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__DIVISOR0" VALUE="5"/>
+        <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__DIVISOR0" VALUE="25"/>
         <PARAMETER NAME="PSU__CRL_APB__PL2_REF_CTRL__DIVISOR0" VALUE="5"/>
         <PARAMETER NAME="PSU__CRL_APB__PL3_REF_CTRL__DIVISOR0" VALUE="4"/>
-        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__DIVISOR1" VALUE="1"/>
-        <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__DIVISOR1" VALUE="4"/>
+        <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__DIVISOR1" VALUE="3"/>
+        <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__DIVISOR1" VALUE="3"/>
         <PARAMETER NAME="PSU__CRL_APB__PL2_REF_CTRL__DIVISOR1" VALUE="1"/>
         <PARAMETER NAME="PSU__CRL_APB__PL3_REF_CTRL__DIVISOR1" VALUE="1"/>
         <PARAMETER NAME="PSU__CRL_APB__AMS_REF_CTRL__DIVISOR0" VALUE="29"/>
@@ -4575,7 +4570,7 @@
         <PARAMETER NAME="PSU__CRF_APB__SATA_REF_CTRL__SRCSEL" VALUE="IOPLL"/>
         <PARAMETER NAME="PSU__CRF_APB__PCIE_REF_CTRL__SRCSEL" VALUE="IOPLL"/>
         <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__SRCSEL" VALUE="IOPLL"/>
-        <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__SRCSEL" VALUE="RPLL"/>
+        <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__SRCSEL" VALUE="IOPLL"/>
         <PARAMETER NAME="PSU__CRL_APB__PL2_REF_CTRL__SRCSEL" VALUE="RPLL"/>
         <PARAMETER NAME="PSU__CRL_APB__PL3_REF_CTRL__SRCSEL" VALUE="RPLL"/>
         <PARAMETER NAME="PSU__CRF_APB__GDMA_REF_CTRL__SRCSEL" VALUE="APLL"/>
@@ -4637,7 +4632,7 @@
         <PARAMETER NAME="PSU__OVERRIDE__BASIC_CLOCK" VALUE="1"/>
         <PARAMETER NAME="PSU__DLL__ISUSED" VALUE="1"/>
         <PARAMETER NAME="PSU__PL_CLK0_BUF" VALUE="TRUE"/>
-        <PARAMETER NAME="PSU__PL_CLK1_BUF" VALUE="FALSE"/>
+        <PARAMETER NAME="PSU__PL_CLK1_BUF" VALUE="TRUE"/>
         <PARAMETER NAME="PSU__PL_CLK2_BUF" VALUE="FALSE"/>
         <PARAMETER NAME="PSU__PL_CLK3_BUF" VALUE="FALSE"/>
         <PARAMETER NAME="PSU__CRF_APB__APLL_CTRL__FRACFREQ" VALUE="27.138"/>
@@ -4671,7 +4666,7 @@
         <PARAMETER NAME="PSU__CRF_APB__SATA_REF_CTRL__ACT_FREQMHZ" VALUE="250"/>
         <PARAMETER NAME="PSU__CRF_APB__PCIE_REF_CTRL__ACT_FREQMHZ" VALUE="250"/>
         <PARAMETER NAME="PSU__CRL_APB__PL0_REF_CTRL__ACT_FREQMHZ" VALUE="100.000000"/>
-        <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ" VALUE="24.999975"/>
+        <PARAMETER NAME="PSU__CRL_APB__PL1_REF_CTRL__ACT_FREQMHZ" VALUE="20.000000"/>
         <PARAMETER NAME="PSU__CRL_APB__PL2_REF_CTRL__ACT_FREQMHZ" VALUE="299.999700"/>
         <PARAMETER NAME="PSU__CRL_APB__PL3_REF_CTRL__ACT_FREQMHZ" VALUE="374.999625"/>
         <PARAMETER NAME="PSU__CRF_APB__GDMA_REF_CTRL__ACT_FREQMHZ" VALUE="600.000000"/>
@@ -5105,8 +5100,13 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxihpm0_fpd_aclk"/>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxihpm1_fpd_aclk"/>
+            <CONNECTION INSTANCE="proc_sys_reset_0" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="ila_0" PORT="clk"/>
-            <CONNECTION INSTANCE="spi_master_0" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="20000000" DIR="O" NAME="pl_clk1" SIGIS="clk" SIGNAME="zynq_ultra_ps_e_0_pl_clk1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="lepton_if_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

@@ -28,121 +28,23 @@
                             {
                                 "name": "probe0",
                                 "id": 0,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": true,
+                                "isVector": false,
                                 "leftIndex": 0,
-                                "rightIndex": 31,
+                                "rightIndex": 0,
                                 "portIndex": 0,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/spi_master_0_axi_m_tdata",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[31]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[30]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[29]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[28]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[27]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[26]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[25]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[24]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[23]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[22]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[21]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[20]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[19]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[18]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[17]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[16]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[15]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[14]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[13]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[12]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[11]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[10]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[9]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[8]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[7]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[6]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[5]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[4]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[3]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[2]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[1]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_axi_m_tdata[0]"
-                                            }
-                                        ]
+                                        "name": "design_1_i/lepton_if_0_valid_out",
+                                        "isBus": false
                                     }
                                 ]
                             },
                             {
                                 "name": "probe1",
                                 "id": 1,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
@@ -150,7 +52,7 @@
                                 "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/spi_master_0_axi_m_tlast",
+                                        "name": "design_1_i/lepton_if_0_line_val",
                                         "isBus": false
                                     }
                                 ]
@@ -158,7 +60,7 @@
                             {
                                 "name": "probe2",
                                 "id": 2,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
@@ -166,7 +68,7 @@
                                 "portIndex": 2,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/spi_master_0_axi_m_tvalid",
+                                        "name": "design_1_i/lepton_if_0_rstb",
                                         "isBus": false
                                     }
                                 ]
@@ -174,7 +76,7 @@
                             {
                                 "name": "probe3",
                                 "id": 3,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
@@ -182,7 +84,7 @@
                                 "portIndex": 3,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/spi_master_0_error",
+                                        "name": "design_1_i/lepton_if_0_enb",
                                         "isBus": false
                                     }
                                 ]
@@ -190,7 +92,7 @@
                             {
                                 "name": "probe4",
                                 "id": 4,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
@@ -206,28 +108,12 @@
                             {
                                 "name": "probe5",
                                 "id": 5,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
                                 "rightIndex": 0,
                                 "portIndex": 5,
-                                "nets": [
-                                    {
-                                        "name": "design_1_i/spi_miso_0_1",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe6",
-                                "id": 6,
-                                "type": "DATA",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 6,
                                 "nets": [
                                     {
                                         "name": "design_1_i/spi_master_0_spi_cs",
@@ -236,9 +122,25 @@
                                 ]
                             },
                             {
+                                "name": "probe6",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/spi_miso_0_1",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
                                 "name": "probe7",
                                 "id": 7,
-                                "type": "TRIGGER",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
@@ -246,51 +148,49 @@
                                 "portIndex": 7,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/spi_master_0_debug_clk",
-                                        "isBus": false
+                                        "name": "design_1_i/rst_1",
+                                        "isBus": false,
+                                        "parentNetId": 7
                                     }
                                 ]
                             },
                             {
                                 "name": "probe8",
                                 "id": 8,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 8,
+                                "rightIndex": 7,
                                 "portIndex": 8,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/spi_master_0_spi_byte_counter_wire",
+                                        "name": "design_1_i/lepton_if_0_line_out",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_byte_counter_wire[8]"
+                                                "name": "design_1_i/lepton_if_0_line_out[7]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_byte_counter_wire[7]"
+                                                "name": "design_1_i/lepton_if_0_line_out[6]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_byte_counter_wire[6]"
+                                                "name": "design_1_i/lepton_if_0_line_out[5]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_byte_counter_wire[5]"
+                                                "name": "design_1_i/lepton_if_0_line_out[4]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_byte_counter_wire[4]"
+                                                "name": "design_1_i/lepton_if_0_line_out[3]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_byte_counter_wire[3]"
+                                                "name": "design_1_i/lepton_if_0_line_out[2]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_byte_counter_wire[2]"
+                                                "name": "design_1_i/lepton_if_0_line_out[1]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_byte_counter_wire[1]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_byte_counter_wire[0]"
+                                                "name": "design_1_i/lepton_if_0_line_out[0]"
                                             }
                                         ]
                                     }
@@ -299,64 +199,28 @@
                             {
                                 "name": "probe9",
                                 "id": 9,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 15,
+                                "rightIndex": 3,
                                 "portIndex": 9,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/spi_master_0_spi_crc_bytes",
+                                        "name": "design_1_i/lepton_if_0_seg_out",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[15]"
+                                                "name": "design_1_i/lepton_if_0_seg_out[3]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[14]"
+                                                "name": "design_1_i/lepton_if_0_seg_out[2]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[13]"
+                                                "name": "design_1_i/lepton_if_0_seg_out[1]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[12]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[11]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[10]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[9]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[8]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[7]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[6]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[5]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[4]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[3]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[2]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[1]"
-                                            },
-                                            {
-                                                "name": "design_1_i/spi_master_0_spi_crc_bytes[0]"
+                                                "name": "design_1_i/lepton_if_0_seg_out[0]"
                                             }
                                         ]
                                     }
@@ -365,31 +229,64 @@
                             {
                                 "name": "probe10",
                                 "id": 10,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 4,
+                                "rightIndex": 15,
                                 "portIndex": 10,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/spi_master_0_spi_bit_counter_wire",
+                                        "name": "design_1_i/lepton_if_0_shift_reg_out",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_bit_counter_wire[4]"
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[15]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_bit_counter_wire[3]"
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[14]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_bit_counter_wire[2]"
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[13]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_bit_counter_wire[1]"
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[12]"
                                             },
                                             {
-                                                "name": "design_1_i/spi_master_0_spi_bit_counter_wire[0]"
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[11]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[10]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[9]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[8]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[7]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[6]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[5]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[4]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[3]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[2]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[1]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_reg_out[0]"
                                             }
                                         ]
                                     }
@@ -398,16 +295,291 @@
                             {
                                 "name": "probe11",
                                 "id": 11,
-                                "type": "DATA",
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 3,
                                 "portIndex": 11,
                                 "nets": [
                                     {
-                                        "name": "design_1_i/spi_master_0_discard",
-                                        "isBus": false
+                                        "name": "design_1_i/lepton_if_0_web",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_1_i/lepton_if_0_web[3]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_web[2]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_web[1]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_web[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe12",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 12,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/lepton_if_0_addrb",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[31]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[30]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[29]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[28]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[27]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[26]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[25]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[24]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[23]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[22]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[21]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[20]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[19]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[18]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[17]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[16]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[15]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[14]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[13]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[12]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[11]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[10]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[9]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[8]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[7]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[6]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[5]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[4]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[3]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[2]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[1]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_addrb[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "design_1_i/lepton_if_0_shift_count_out",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[31]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[30]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[29]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[28]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[27]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[26]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[25]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[24]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[23]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[22]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[21]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[20]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[19]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[18]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[17]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[16]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[15]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[14]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[13]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[12]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[11]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[10]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[9]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[8]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[7]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[6]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[5]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[4]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[3]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[2]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[1]"
+                                            },
+                                            {
+                                                "name": "design_1_i/lepton_if_0_shift_count_out[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "parent_nets": [
+                    {
+                        "id": 7,
+                        "name": "rst_IBUF_inst/O",
+                        "state_reg": [
+                            {
+                                "name": "design_1_i/lepton_if_0/inst/FSM_sequential_current_state_reg[0]",
+                                "states": [
+                                    {
+                                        "name": "idle",
+                                        "val": "000"
+                                    },
+                                    {
+                                        "name": "crc",
+                                        "val": "010"
+                                    },
+                                    {
+                                        "name": "check",
+                                        "val": "100"
+                                    },
+                                    {
+                                        "name": "packet",
+                                        "val": "011"
+                                    },
+                                    {
+                                        "name": "sync",
+                                        "val": "001"
                                     }
                                 ]
                             }

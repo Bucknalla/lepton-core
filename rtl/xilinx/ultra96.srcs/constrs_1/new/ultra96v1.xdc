@@ -107,20 +107,25 @@ set_property PACKAGE_PIN D7   [get_ports {HD_GPIO_0               }];  # "D7.HD_
 set_property PACKAGE_PIN F8   [get_ports {HD_GPIO_1               }];  # "F8.HD_GPIO_1"
 set_property PACKAGE_PIN F7   [get_ports {HD_GPIO_2               }];  # "F7.HD_GPIO_2"
 set_property PACKAGE_PIN G7   [get_ports {HD_GPIO_3               }];  # "G7.HD_GPIO_3"
-set_property PACKAGE_PIN F6   [get_ports {HD_GPIO_4               }];  # "F6.HD_GPIO_4"
-set_property PACKAGE_PIN G5   [get_ports {spi_clk_0               }];  # "G5.HD_GPIO_5"
+set_property -dict {PACKAGE_PIN F6 IOSTANDARD LVCMOS33 } [get_ports {rst               }];  # "F6.HD_GPIO_4"
+set_property -dict {PACKAGE_PIN G5 IOSTANDARD LVCMOS33 } [get_ports {spi_clk_0               }];  # "G5.HD_GPIO_5"
 set_property PACKAGE_PIN A6   [get_ports {HD_GPIO_6               }];  # "A6.HD_GPIO_6"
 set_property PACKAGE_PIN A7   [get_ports {HD_GPIO_7               }];  # "A7.HD_GPIO_7"
 set_property PACKAGE_PIN G6   [get_ports {HD_GPIO_8               }];  # "G6.HD_GPIO_8"
-set_property PACKAGE_PIN E6   [get_ports {spi_miso_0               }];  # "E6.HD_GPIO_9"
+set_property -dict {PACKAGE_PIN E6 IOSTANDARD LVCMOS33 } [get_ports {spi_miso_0               }];  # "E6.HD_GPIO_9"
 set_property PACKAGE_PIN E5   [get_ports {HD_GPIO_10              }];  # "E5.HD_GPIO_10"
-set_property PACKAGE_PIN D6   [get_ports {spi_cs_0              }];  # "D6.HD_GPIO_11"
+set_property -dict {PACKAGE_PIN D6 IOSTANDARD LVCMOS33 } [get_ports {spi_cs_0              }];  # "D6.HD_GPIO_11"
 set_property PACKAGE_PIN D5   [get_ports {HD_GPIO_12              }];  # "D5.HD_GPIO_12"
 set_property PACKAGE_PIN C7   [get_ports {HD_GPIO_13              }];  # "C7.HD_GPIO_13"
 set_property PACKAGE_PIN B6   [get_ports {HD_GPIO_14              }];  # "B6.HD_GPIO_14"
 set_property PACKAGE_PIN C5   [get_ports {HD_GPIO_15              }];  # "C5.HD_GPIO_15"
 
+set_property SLEW FAST [get_ports {spi_clk_0}]
+set_property SLEW FAST [get_ports {spi_cs_0}]
+set_property SLEW FAST [get_ports {spi_miso_0}]
 
+set_property DRIVE 16 [get_ports {spi_clk_0}]
+set_property DRIVE 16  [get_ports {spi_cs_0}]
 # ----------------------------------------------------------------------------
 # IOSTANDARD Constraints
 #
@@ -137,7 +142,9 @@ set_property PACKAGE_PIN C5   [get_ports {HD_GPIO_15              }];  # "C5.HD_
 set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 26]];
 
 # Set the bank voltage for IO Bank 65 to 1.2V
-set_property IOSTANDARD LVCMOS12 [get_ports -of_objects [get_iobanks 65]];
+#set_property IOSTANDARD LVCMOS12 [get_ports -of_objects [get_iobanks 65]];
+set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 65]];
+
 
 # Set the bank voltage for IO Bank 66 to 1.2V
 set_property IOSTANDARD LVCMOS12 [get_ports -of_objects [get_iobanks 66]];

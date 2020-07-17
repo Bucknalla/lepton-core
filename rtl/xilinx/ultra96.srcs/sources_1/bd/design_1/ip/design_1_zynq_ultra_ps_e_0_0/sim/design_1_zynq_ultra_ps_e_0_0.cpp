@@ -94,7 +94,7 @@ design_1_zynq_ultra_ps_e_0_0::design_1_zynq_ultra_ps_e_0_0(const sc_module_name&
   model_param_props.addString("C_EN_FIFO_ENET2", "0");
   model_param_props.addString("C_EN_FIFO_ENET3", "0");
   model_param_props.addString("C_PL_CLK0_BUF", "TRUE");
-  model_param_props.addString("C_PL_CLK1_BUF", "FALSE");
+  model_param_props.addString("C_PL_CLK1_BUF", "TRUE");
   model_param_props.addString("C_PL_CLK2_BUF", "FALSE");
   model_param_props.addString("C_PL_CLK3_BUF", "FALSE");
   mp_impl = new zynq_ultra_ps_e_tlm("inst", model_param_props);
@@ -111,6 +111,7 @@ design_1_zynq_ultra_ps_e_0_0::design_1_zynq_ultra_ps_e_0_0(const sc_module_name&
   mp_impl->pl_ps_irq0(pl_ps_irq0);
   mp_impl->pl_resetn0(pl_resetn0);
   mp_impl->pl_clk0(pl_clk0);
+  mp_impl->pl_clk1(pl_clk1);
 
   // initialize transactors
   mp_M_AXI_HPM0_FPD_transactor = NULL;

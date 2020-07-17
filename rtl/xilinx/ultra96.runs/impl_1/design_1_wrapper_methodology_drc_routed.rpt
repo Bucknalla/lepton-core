@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Thu Jun 25 15:44:57 2020
+| Date         : Tue Jun 30 16:31:43 2020
 | Host         : alex-pc running 64-bit Ubuntu 20.04 LTS
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -23,15 +23,17 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 40
-+-----------+----------+---------------------------------------------+------------+
-| Rule      | Severity | Description                                 | Violations |
-+-----------+----------+---------------------------------------------+------------+
-| LUTAR-1   | Warning  | LUT drives async reset alert                | 5          |
-| TIMING-17 | Warning  | Non-clocked sequential cell                 | 32         |
-| TIMING-18 | Warning  | Missing input or output delay               | 2          |
-| TIMING-35 | Warning  | No common node in paths with the same clock | 1          |
-+-----------+----------+---------------------------------------------+------------+
+             Violations found: 15
++-----------+----------+-------------------------------------------------+------------+
+| Rule      | Severity | Description                                     | Violations |
++-----------+----------+-------------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                    | 5          |
+| TIMING-6  | Warning  | No common primary clock between related clocks  | 1          |
+| TIMING-7  | Warning  | No common node between related clocks           | 1          |
+| TIMING-18 | Warning  | Missing input or output delay                   | 3          |
+| TIMING-35 | Warning  | No common node in paths with the same clock     | 1          |
+| XDCC-5    | Warning  | User Non-Timing constraint/property overwritten | 4          |
++-----------+----------+-------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -60,179 +62,62 @@ LUT drives async reset alert
 LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_sel[0]_INST_0, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[10]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[11]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[12]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[13]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[14]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[15]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[6]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[7]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[8]/CLR, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[9]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-TIMING-17#1 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_bit_counter_reg[0]/C is not reached by a timing clock
+TIMING-6#1 Warning
+No common primary clock between related clocks  
+The clocks clk_pl_1 and clk_pl_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_pl_1] -to [get_clocks clk_pl_0]
 Related violations: <none>
 
-TIMING-17#2 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_bit_counter_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#3 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_bit_counter_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#4 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_bit_counter_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#5 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_bit_counter_reg[4]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#6 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_byte_counter_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#7 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_byte_counter_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#8 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_byte_counter_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#9 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_byte_counter_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#10 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_byte_counter_reg[4]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#11 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_byte_counter_reg[5]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#12 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_byte_counter_reg[6]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#13 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_byte_counter_reg[7]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#14 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_byte_counter_reg[8]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#15 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/spi_cs_reg_slow_reg/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#16 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#17 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[10]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#18 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[11]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#19 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[12]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#20 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[13]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#21 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[14]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#22 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[15]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#23 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[16]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#24 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#25 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#26 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#27 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[4]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#28 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[5]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#29 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[6]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#30 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[7]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#31 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[8]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#32 Warning
-Non-clocked sequential cell  
-The clock pin design_1_i/spi_master_0/inst/sync_counter_reg[9]/C is not reached by a timing clock
+TIMING-7#1 Warning
+No common node between related clocks  
+The clocks clk_pl_1 and clk_pl_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_pl_1] -to [get_clocks clk_pl_0]
 Related violations: <none>
 
 TIMING-18#1 Warning
 Missing input or output delay  
-An input delay is missing on spi_miso_0 relative to clock(s) clk_pl_0
+An input delay is missing on rst relative to clock(s) clk_pl_0, clk_pl_1
 Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An output delay is missing on spi_clk_0 relative to clock(s) clk_pl_0
+An input delay is missing on spi_miso_0 relative to clock(s) clk_pl_0, clk_pl_1
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on spi_cs_0 relative to clock(s) clk_pl_1
 Related violations: <none>
 
 TIMING-35#1 Warning
 No common node in paths with the same clock  
-The clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK has paths without a common node. First path found between dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/iTDO_reg/C and dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TDO. Please review clock constraints
+The clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK has paths without a common node. First path found between dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK and dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TDO. Please review clock constraints
+Related violations: <none>
+
+XDCC-5#1 Warning
+User Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on rst overrides a previous user property.
+New Source: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/constrs_1/new/ultra96v1.xdc (Line: 142)
+Previous Source: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/constrs_1/new/ultra96v1.xdc (Line: 110)
+Related violations: <none>
+
+XDCC-5#2 Warning
+User Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on spi_clk_0 overrides a previous user property.
+New Source: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/constrs_1/new/ultra96v1.xdc (Line: 142)
+Previous Source: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/constrs_1/new/ultra96v1.xdc (Line: 111)
+Related violations: <none>
+
+XDCC-5#3 Warning
+User Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on spi_cs_0 overrides a previous user property.
+New Source: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/constrs_1/new/ultra96v1.xdc (Line: 142)
+Previous Source: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/constrs_1/new/ultra96v1.xdc (Line: 117)
+Related violations: <none>
+
+XDCC-5#4 Warning
+User Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on spi_miso_0 overrides a previous user property.
+New Source: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/constrs_1/new/ultra96v1.xdc (Line: 142)
+Previous Source: /home/alex/GitHub/lepton-core/rtl/xilinx/ultra96.srcs/constrs_1/new/ultra96v1.xdc (Line: 115)
 Related violations: <none>
 
 

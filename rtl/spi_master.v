@@ -21,6 +21,13 @@ module spi_master #(
     output wire spi_clk,
     output wire spi_cs,
     output wire [8:0] spi_byte_counter_wire,
+    // debug
+    output wire discard,
+    output reg [15:0] spi_crc_bytes = 0,
+    output reg [15:0] spi_id_bytes = 0,
+    output wire [4:0] spi_bit_counter_wire,
+    output reg [7:0] spi_incoming_byte = 0,
+
 
     output reg axi_m_tlast = 0,
     input axi_m_tready,
@@ -59,16 +66,16 @@ reg buffer_full = 0;
 
 // Counts the bits
 reg [4:0] spi_bit_counter = 0;
+assign spi_bit_counter_wire = spi_bit_counter;
 reg [8:0] spi_byte_counter = 0;
 reg [7:0] spi_id_byte = 0;
-reg [15:0] spi_crc_bytes = 0;
 
 assign spi_byte_counter_wire = spi_byte_counter;
 
 reg [8:0] spi_packet_counter = 0;
 
 // Incoming MISO Byte
-reg [7:0] spi_incoming_byte = 0;
+//reg [7:0] spi_incoming_byte = 0;
 reg latch = 1;
 
 // Makes things slower
@@ -93,10 +100,10 @@ localparam VOPSPI_PAYLOAD = 164;
 // Default state is IDLE
 reg [2:0] spi_state;
 reg [2:0] axi_state;
-(* mark_debug = "true" *) wire discard_packet;
-assign discard_packet = crc_valid;
+//(* mark_debug = "true" *) wire discard_packet;
+assign discard = crc_valid;
 // CRC
-reg crc_valid = 0;
+reg crc_valid = 1;
 
 assign sync = (sync_counter < (FRAME_LENGTH*SPI_BYTE*VOPSPI_PAYLOAD)) && ((spi_state == SYNC) || (spi_state == IDLE)) ? 1'b1 : 1'b0;
 
@@ -167,7 +174,7 @@ always @(negedge spi_clk_reg) begin
             else begin
                 sync_counter <= 0;
             end
-            if(!spi_cs_reg && discard_packet) begin
+            if(!spi_cs_reg && discard) begin
                 if (spi_bit_counter == 8) begin
                     spi_bit_counter <= 1;
                     if(spi_byte_counter == (VOPSPI_PAYLOAD-1)) begin
@@ -199,18 +206,29 @@ always @(posedge clk) begin
         if(spi_byte_counter == 0) begin
             crc_valid <= 1;
         end
-        else if(spi_byte_counter == 0 && spi_bit_counter == 8) begin 
-            for (j=0; j<8; j=j+1) begin
-                spi_crc_bytes[j] <= spi_incoming_byte[j];
+        else if(spi_byte_counter == 1 && spi_bit_counter == 1) begin 
+            for (j=7; j!=0; j=j-1) begin
+                spi_id_bytes[j+8] <= spi_incoming_byte[j];
             end            
         end
-        else if(spi_byte_counter == 1 && spi_bit_counter == 8) begin 
-            for (j=0; j<8; j=j+1) begin
+        else if(spi_byte_counter == 2 && spi_bit_counter == 1) begin 
+            for (j=7; j!=0; j=j-1) begin
+                spi_id_bytes[j] <= spi_incoming_byte[j];
+            end            
+        end
+        else if(spi_byte_counter == 3 && spi_bit_counter == 1) begin 
+            for (j=7; j!=0; j=j-1) begin
                 spi_crc_bytes[j+8] <= spi_incoming_byte[j];
             end            
         end
-        else if(spi_crc_bytes[11:8] == 4'hF) begin
+        else if(spi_byte_counter == 4 && spi_bit_counter == 1) begin 
+            for (j=7; j!=0; j=j-1) begin
+                spi_crc_bytes[j] <= spi_incoming_byte[j];
+            end            
+        end
+        else if(spi_id_bytes[11:8] == 4'hF) begin
             crc_valid <= 0;
+            spi_id_bytes <= 0;
         end
     end
 end
