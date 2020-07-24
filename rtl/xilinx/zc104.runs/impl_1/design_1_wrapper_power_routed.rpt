@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Thu Jul 16 15:42:43 2020
-| Host             : alex-pc running 64-bit Ubuntu 20.04 LTS
+| Date             : Mon Jul 20 16:35:39 2020
+| Host             : alex-xps-15 running 64-bit Ubuntu 20.04 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
 | Device           : xczu7ev-ffvc1156-2-e
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 3.426        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 2.711        |
+| Dynamic (W)              | 2.712        |
 | Device Static (W)        | 0.714        |
 | Effective TJA (C/W)      | 1.0          |
 | Max Ambient (C)          | 96.7         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.020 |        5 |       --- |             --- |
-| CLB Logic                |     0.004 |    11325 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     3492 |    230400 |            1.52 |
+| CLB Logic                |     0.004 |    11647 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     3609 |    230400 |            1.57 |
 |   LUT as Shift Register  |     0.001 |      425 |    101760 |            0.42 |
-|   Register               |    <0.001 |     5619 |    460800 |            1.22 |
+|   Register               |    <0.001 |     5807 |    460800 |            1.26 |
 |   LUT as Distributed RAM |    <0.001 |       40 |    101760 |            0.04 |
-|   CARRY8                 |    <0.001 |       72 |     28800 |            0.25 |
+|   CARRY8                 |    <0.001 |       76 |     28800 |            0.26 |
 |   Others                 |     0.000 |      697 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |       80 |    230400 |            0.03 |
-| Signals                  |     0.004 |     8166 |       --- |             --- |
+| Signals                  |     0.004 |     8394 |       --- |             --- |
 | Block RAM                |     0.003 |      3.5 |       312 |            1.12 |
 | I/O                      |     0.003 |        3 |       360 |            0.83 |
 | PS8                      |     2.678 |        1 |       --- |             --- |
@@ -78,7 +78,7 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------------+-------------+-----------+-------------+------------+
-| Vccint          |       0.850 |     0.186 |       0.035 |      0.151 |
+| Vccint          |       0.850 |     0.187 |       0.036 |      0.151 |
 | Vccint_io       |       0.850 |     0.071 |       0.000 |      0.071 |
 | Vccbram         |       0.850 |     0.002 |       0.000 |      0.002 |
 | Vccaux          |       1.800 |     0.147 |       0.000 |      0.147 |
@@ -168,17 +168,17 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| design_1_wrapper         |     2.711 |
+| design_1_wrapper         |     2.712 |
 |   dbg_hub                |     0.002 |
 |     inst                 |     0.002 |
 |       BSCANID.u_xsdbm_id |     0.002 |
 |   design_1_i             |     2.706 |
-|     axi_dma_0            |     0.005 |
-|       U0                 |     0.005 |
+|     axi_dma_0            |     0.006 |
+|       U0                 |     0.006 |
 |     ila_0                |     0.015 |
 |       inst               |     0.015 |
 |     ps8_0_axi_periph     |     0.006 |
-|       s00_couplers       |     0.005 |
+|       s00_couplers       |     0.004 |
 |       xbar               |     0.001 |
 |     zynq_ultra_ps_e_0    |     2.679 |
 |       inst               |     2.679 |

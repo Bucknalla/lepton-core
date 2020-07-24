@@ -1,8 +1,8 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-//Date        : Wed Jul 15 16:42:00 2020
-//Host        : alex-pc running 64-bit Ubuntu 20.04 LTS
+//Date        : Mon Jul 20 16:26:39 2020
+//Host        : alex-xps-15 running 64-bit Ubuntu 20.04 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
 //Purpose     : IP block netlist
@@ -28,8 +28,9 @@ module design_1
   wire lepton_vospi_0_axis_m_tuser;
   wire lepton_vospi_0_axis_m_tvalid;
   wire [3:0]lepton_vospi_0_current_state_wire;
-  wire [7:0]lepton_vospi_0_line_out;
+  wire [11:0]lepton_vospi_0_line_out;
   wire lepton_vospi_0_line_val;
+  wire [3:0]lepton_vospi_0_mode;
   wire [3:0]lepton_vospi_0_seg_num;
   wire [15:0]lepton_vospi_0_shift_reg_wire;
   wire miso_0_1;
@@ -180,6 +181,7 @@ module design_1
         .probe11(lepton_vospi_0_line_val),
         .probe12(lepton_vospi_0_current_state_wire),
         .probe13(lepton_vospi_0_shift_reg_wire),
+        .probe14(lepton_vospi_0_mode),
         .probe2(miso_0_1),
         .probe3(axi_gpio_0_gpio_io_o),
         .probe4(lepton_vospi_0_axis_m_tlast),
@@ -201,6 +203,7 @@ module design_1
         .current_state_wire(lepton_vospi_0_current_state_wire),
         .line_out(lepton_vospi_0_line_out),
         .line_val(lepton_vospi_0_line_val),
+        .mode(lepton_vospi_0_mode),
         .rst(axi_gpio_0_gpio_io_o),
         .seg_num(lepton_vospi_0_seg_num),
         .shift_reg_wire(lepton_vospi_0_shift_reg_wire),

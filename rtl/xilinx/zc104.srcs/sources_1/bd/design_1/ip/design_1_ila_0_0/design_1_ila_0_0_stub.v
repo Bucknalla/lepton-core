@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Thu Jul 16 14:53:45 2020
+// Date        : Thu Jul 16 14:53:43 2020
 // Host        : alex-pc running 64-bit Ubuntu 20.04 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_ila_0_0 -prefix
+//               design_1_ila_0_0_ design_1_ila_0_0_stub.v
 // Design      : design_1_ila_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xczu7ev-ffvc1156-2-e

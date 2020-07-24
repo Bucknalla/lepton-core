@@ -47,7 +47,7 @@ reg [11:0] line_num = 0; //use this plus the number of bytes in a packet to form
 reg [7:0] packet_count = 0;
 reg [7:0] pixel_count = 0;
 
-reg [7:0] frame_delay = 0;
+reg [31:0] frame_delay = 0;
 //reg pixel_count : integer range 0 to 255;
 
 reg valid = 0;
@@ -133,7 +133,7 @@ always @(posedge clk or posedge rst) begin
         end
         case (current_state)
             idle: begin
-                if (frame_delay == 63) begin  
+                if (frame_delay == 12000) begin  
                     int_cs <= 0;
                     current_state <= sync;
                     frame_delay <= 0;

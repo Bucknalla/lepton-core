@@ -1,8 +1,8 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Thu Jul 16 15:37:03 2020
--- Host        : alex-pc running 64-bit Ubuntu 20.04 LTS
+-- Date        : Mon Jul 20 15:33:34 2020
+-- Host        : alex-xps-15 running 64-bit Ubuntu 20.04 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/bd/design_1/ip/design_1_lepton_vospi_0_0/design_1_lepton_vospi_0_0_stub.vhdl
 -- Design      : design_1_lepton_vospi_0_0

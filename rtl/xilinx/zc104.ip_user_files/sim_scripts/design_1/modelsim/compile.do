@@ -71,7 +71,6 @@ vcom -work xpm -64 -93 \
 "/opt/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/00a3/hdl" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/c45e/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_1/sim_tlm" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_1" "+incdir+/opt/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
-"../../../bd/design_1/sim/design_1.v" \
 "../../../bd/design_1/ip/design_1_ila_0_0/sim/design_1_ila_0_0.v" \
 "../../../bd/design_1/ip/design_1_lepton_vospi_0_0/sim/design_1_lepton_vospi_0_0.v" \
 
@@ -159,6 +158,9 @@ vcom -work axi_dma_v7_1_19 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/design_1/ip/design_1_axi_dma_0_0/sim/design_1_axi_dma_0_0.vhd" \
+
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/00a3/hdl" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/c45e/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_1/sim_tlm" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_1" "+incdir+/opt/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../bd/design_1/sim/design_1.v" \
 
 vlog -work axi_protocol_converter_v2_1_18 -64 -incr "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/00a3/hdl" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/1b7e/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/122e/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/7d3c/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ipshared/c45e/hdl/verilog" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_1/sim_tlm" "+incdir+../../../../zc104.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_1" "+incdir+/opt/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
 "../../../../zc104.srcs/sources_1/bd/design_1/ipshared/7a04/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

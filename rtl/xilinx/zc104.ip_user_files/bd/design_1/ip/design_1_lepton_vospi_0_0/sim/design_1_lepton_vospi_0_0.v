@@ -73,7 +73,8 @@ module design_1_lepton_vospi_0_0 (
   ctrl,
   current_state_wire,
   frame_counter_wire,
-  shift_reg_wire
+  shift_reg_wire,
+  mode
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 20000000, PHASE 0.000, CLK_DOMAIN design_1_zynq_ultra_ps_e_0_1_pl_clk1, INSERT_VIP 0" *)
@@ -93,7 +94,7 @@ input wire spi_miso;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 spi_clk CLK" *)
 output wire spi_clk;
 output wire spi_cs;
-output wire [7 : 0] line_out;
+output wire [11 : 0] line_out;
 output wire line_val;
 output wire [3 : 0] seg_num;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 axis_m TLAST" *)
@@ -111,6 +112,7 @@ input wire [1 : 0] ctrl;
 output wire [3 : 0] current_state_wire;
 output wire [3 : 0] frame_counter_wire;
 output wire [15 : 0] shift_reg_wire;
+output wire [3 : 0] mode;
 
   lepton_vospi #(
     .AXI_DATA_WIDTH(32),
@@ -135,6 +137,7 @@ output wire [15 : 0] shift_reg_wire;
     .ctrl(ctrl),
     .current_state_wire(current_state_wire),
     .frame_counter_wire(frame_counter_wire),
-    .shift_reg_wire(shift_reg_wire)
+    .shift_reg_wire(shift_reg_wire),
+    .mode(mode)
   );
 endmodule

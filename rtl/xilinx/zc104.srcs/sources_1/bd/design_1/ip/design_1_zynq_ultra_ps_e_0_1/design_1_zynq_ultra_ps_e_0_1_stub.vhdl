@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
--- Date        : Mon Jul 13 15:51:04 2020
+-- Date        : Mon Jul 13 15:51:03 2020
 -- Host        : alex-pc running 64-bit Ubuntu 20.04 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/alex/GitHub/lepton-core/rtl/xilinx/zc104.srcs/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_1/design_1_zynq_ultra_ps_e_0_1_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_zynq_ultra_ps_e_0_1 -prefix
+--               design_1_zynq_ultra_ps_e_0_1_ design_1_zynq_ultra_ps_e_0_1_stub.vhdl
 -- Design      : design_1_zynq_ultra_ps_e_0_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xczu7ev-ffvc1156-2-e
